@@ -1,0 +1,45 @@
+/* ============================================
+   DESIGN TOKENS — AVS Portfolio
+   Direção: Editorial / Autoridade pela Contenção
+   Referências: Kinfolk, Monocle, Pentagram, Manual
+   ============================================ */
+
+:root {
+  /* Cor */
+  --paper:      #F5F3EE;
+  --paper-alt:  #EFECE5;
+  --ink:        #141414;
+  --ink-soft:   rgba(20, 20, 20, 0.62);
+  --ink-faint:  rgba(20, 20, 20, 0.34);
+  --rule:       rgba(20, 20, 20, 0.14);
+  --rule-soft:  rgba(20, 20, 20, 0.08);
+  --accent:     #1D3E8C;
+  --accent-soft: rgba(29, 62, 140, 0.10);
+
+  /* Tipografia */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Escala tipográfica */
+  --size-hero:   clamp(2.6rem, 6.5vw, 5.4rem);
+  --size-h2:     clamp(1.6rem, 3vw, 2.2rem);
+  --size-h3:     1.25rem;
+  --size-body:   1rem;
+  --size-small:  0.8125rem;
+  --size-micro:  0.6875rem;
+
+  /* Espaçamento */
+  --gutter:      2.5rem;
+  --gutter-lg:   4rem;
+  --radius:      2px;
+
+  /* Movimento */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 1.25rem;
+    --gutter-lg: 2rem;
+  }
+}
