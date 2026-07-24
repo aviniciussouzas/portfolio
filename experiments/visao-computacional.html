@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visão Computacional — Detecção de Bordas</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script async src="https://docs.opencv.org/4.7.0/opencv.js" onload="onOpenCvReady();"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #000; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<script>
+let video;
+let edgeBuffer;
+let src, gray, blur, edges;
+let previousEdgeDensity = 0;
+let edgeDensity = 0;
+let movementEnergy = 0;
+let cvReady = false;
+let videoReady = false;
+
+// Corrigido: registrar onRuntimeInitialized no onload do <script> do opencv.js,
+// não dentro de setup(). Como o script carrega com `async`, checar
+// `typeof cv !== "undefined"` dentro de setup() é uma corrida contra o
+// carregamento do arquivo — na maioria das vezes falha silenciosamente e
+// cvReady nunca vira true. Registrando aqui, o runtime sempre confirma.
+function onOpenCvReady() {
+  cv['onRuntimeInitialized'] = () => {
+    src = new cv.Mat(240, 320, cv.CV_8UC4);
+    gray = new cv.Mat();
+    blur = new cv.Mat();
+    edges = new cv.Mat();
+    cvReady = true;
+  };
+}
+
+function setup() {
+  createCanvas(640, 480);
+
+  video = createCapture(VIDEO);
+  video.size(320, 240);
+  video.hide();
+
+  video.elt.onloadeddata = () => {
+    videoReady = true;
+  };
+
+  edgeBuffer = createGraphics(320, 240);
+}
+
+function draw() {
+  if (!cvReady || !videoReady) {
+    background(0);
+    fill(255);
+    textSize(16);
+    text(!cvReady ? "Carregando OpenCV..." : "Aguardando câmera...", 20, 40);
+    return;
+  }
+
+  image(video, 0, 0);
+
+  let cap = new cv.VideoCapture(video.elt);
+  cap.read(src);
+
+  cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY);
+  cv.GaussianBlur(gray, blur, new cv.Size(5, 5), 1.5);
+  cv.Canny(blur, edges, 50, 100);
+
+  let edgePixels = 0;
+  let totalPixels = edges.rows * edges.cols;
+  for (let i = 0; i < edges.data.length; i++) {
+    if (edges.data[i] > 0) edgePixels++;
+  }
+  edgeDensity = edgePixels / totalPixels;
+  movementEnergy = abs(edgeDensity - previousEdgeDensity);
+  previousEdgeDensity = edgeDensity;
+
+  edgeBuffer.loadPixels();
+  for (let i = 0; i < edges.data.length; i++) {
+    let val = edges.data[i];
+    edgeBuffer.pixels[i * 4] = val;
+    edgeBuffer.pixels[i * 4 + 1] = val;
+    edgeBuffer.pixels[i * 4 + 2] = val;
+    edgeBuffer.pixels[i * 4 + 3] = 255;
+  }
+  edgeBuffer.updatePixels();
+
+  image(edgeBuffer, 320, 0, 320, 240);
+
+  fill(255);
+  textSize(14);
+  text("edgeDensity: " + edgeDensity.toFixed(4), 10, 260);
+  text("movementEnergy: " + movementEnergy.toFixed(4), 10, 280);
+}
+</script>
+</body>
+</html>

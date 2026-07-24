@@ -90,27 +90,51 @@
       </div>
     </div>
 
-    <!-- GALERIA — imagens e vídeos do projeto -->
-    <div class="case-gallery">
-      <span class="eyebrow">Galeria</span>
-      <div class="gallery-grid" style="margin-top:1rem;">
-        <div class="gallery-item span-4 is-video">
-          <!-- <video src="../assets/colagens/tipo-sensivel-video.mp4" muted loop autoplay playsinline></video> -->
-        </div>
-        <div class="gallery-item span-2">
-          <!-- <img src="../assets/colagens/tipo-sensivel-01.jpg" alt=""> -->
-        </div>
-        <div class="gallery-item span-2">
-          <!-- <img src="../assets/colagens/tipo-sensivel-02.jpg" alt=""> -->
-        </div>
-        <div class="gallery-item span-3">
-          <!-- <img src="../assets/colagens/tipo-sensivel-03.jpg" alt=""> -->
-        </div>
-        <div class="gallery-item span-3">
-          <!-- <img src="../assets/colagens/tipo-sensivel-04.jpg" alt=""> -->
+    <!-- GALERIA — imagem grande + trilha de thumbnails + lightbox -->
+    <section class="case-gallery" aria-labelledby="gallery-title" data-lightbox-root="#lightbox-tipo-sensivel">
+      <div class="gallery-heading">
+        <span class="eyebrow" id="gallery-title">Galeria</span>
+        <p class="gallery-counter" aria-live="polite"><span data-current>01</span> / <span data-total>04</span></p>
+      </div>
+
+      <div class="gallery-stage">
+        <button class="gallery-main" type="button" aria-label="Expandir imagem atual" data-open-lightbox>
+          <img src="../assets/colagens/tipo-sensivel-01.jpg" alt="Tipo Sensível — peça 1" data-gallery-main>
+          <span class="gallery-expand-badge">Expandir ↗</span>
+        </button>
+
+        <div class="gallery-controls" aria-label="Controles da galeria">
+          <button class="gallery-arrow" type="button" data-prev aria-label="Imagem anterior">←</button>
+          <p class="gallery-caption" data-caption>Tipo Sensível — peça 1</p>
+          <button class="gallery-arrow" type="button" data-next aria-label="Próxima imagem">→</button>
         </div>
       </div>
-    </div>
+
+      <div class="gallery-thumbs" role="list" aria-label="Selecionar imagem">
+        <button class="gallery-thumb is-active" type="button" role="listitem" aria-label="Ver imagem 1">
+          <img src="../assets/colagens/tipo-sensivel-01.jpg" alt="Tipo Sensível — peça 1">
+        </button>
+        <button class="gallery-thumb" type="button" role="listitem" aria-label="Ver imagem 2">
+          <img src="../assets/colagens/tipo-sensivel-02.jpg" alt="Tipo Sensível — peça 2">
+        </button>
+        <button class="gallery-thumb" type="button" role="listitem" aria-label="Ver imagem 3">
+          <img src="../assets/colagens/tipo-sensivel-03.jpg" alt="Tipo Sensível — peça 3">
+        </button>
+        <button class="gallery-thumb" type="button" role="listitem" aria-label="Ver imagem 4">
+          <img src="../assets/colagens/tipo-sensivel-04.jpg" alt="Tipo Sensível — peça 4">
+        </button>
+      </div>
+    </section>
+
+    <dialog class="gallery-lightbox" id="lightbox-tipo-sensivel" aria-label="Visualização ampliada">
+      <button class="lightbox-close" type="button" data-close-lightbox aria-label="Fechar">Fechar ×</button>
+      <button class="lightbox-arrow lightbox-prev" type="button" data-lightbox-prev aria-label="Imagem anterior">←</button>
+      <figure class="lightbox-figure">
+        <img src="" alt="" data-lightbox-image>
+        <figcaption data-lightbox-caption></figcaption>
+      </figure>
+      <button class="lightbox-arrow lightbox-next" type="button" data-lightbox-next aria-label="Próxima imagem">→</button>
+    </dialog>
   </section>
 
   <footer class="site-footer">

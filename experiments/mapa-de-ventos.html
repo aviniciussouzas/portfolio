@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agendas Secretas — Mapas e Cataclismos (Playground)</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+  <style>
+    html,body{height:100%;margin:0;background:#000;overflow:hidden;font-family:Inter,system-ui,-apple-system,'Helvetica Neue',Arial}
+    canvas{display:block;filter:contrast(1.1) brightness(1.2)}
+  </style>
+</head>
+<body>
+<script>
+// Agendas Secretas — Mapa de Ventos e Cataclismos com Webcam
+
+let cols, rows;
+let flowfield;
+let inc = 0.1;
+let scl = 20;
+let zoff = 0;
+let fr;
+let particles = [];
+let video;
+let useCam = true;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  pixelDensity(1);
+  colorMode(HSB, 255);
+
+  video = createCapture(VIDEO);
+  video.size(160, 120);
+  video.hide();
+
+  cols = floor(width / scl);
+  rows = floor(height / scl);
+  flowfield = new Array(cols * rows);
+
+  for (let i = 0; i < 300; i++) {
+    particles[i] = new Particle();
+  }
+
+  background(0);
+}
+
+function draw() {
+  if(useCam && video.loadedmetadata) {
+    video.loadPixels();
+  }
+  
+  let yoff = 0;
+  for (let y = 0; y < rows; y++) {
+    let xoff = 0;
+    for (let x = 0; x < cols; x++) {
+      let angle = noise(xoff, yoff, zoff) * TWO_PI * 2;
+      let v = p5.Vector.fromAngle(angle);
+      v.setMag(1);
+      flowfield[x + y * cols] = v;
+      xoff += inc;
+    }
+    yoff += inc;
+  }
+  zoff += 0.002;
+
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].follow(flowfield);
+    particles[i].update();
+    particles[i].edges();
+    particles[i].show(video);
+  }
+}
+
+class Particle {
+  constructor() {
+    this.pos = createVector(random(width), random(height));
+    this.vel = createVector(0, 0);
+    this.acc = createVector(0, 0);
+    this.maxspeed = 2;
+    this.h = random(255);
+  }
+
+  follow(vectors) {
+    let x = floor(this.pos.x / scl);
+    let y = floor(this.pos.y / scl);
+    let index = x + y * cols;
+    let force = vectors[index];
+    if (force) this.applyForce(force);
+  }
+
+  applyForce(force) {
+    this.acc.add(force);
+  }
+
+  update() {
+    this.vel.add(this.acc);
+    this.vel.limit(this.maxspeed);
+    this.pos.add(this.vel);
+    this.acc.mult(0);
+  }
+
+  show(video) {
+    let brightnessFactor = 1;
+    if (useCam && video.pixels.length > 0) {
+      let x = int(map(this.pos.x, 0, width, 0, video.width - 1));
+      let y = int(map(this.pos.y, 0, height, 0, video.height - 1));
+      let idx = (x + y * video.width) * 4;
+      let br = video.pixels[idx];
+      brightnessFactor = map(br, 0, 255, 0.4, 2.0);
+    }
+    stroke((this.h + frameCount/5) % 255, 255, 255 * brightnessFactor, 60);
+    strokeWeight(1.2);
+    line(this.pos.x, this.pos.y, this.pos.x - this.vel.x*2, this.pos.y - this.vel.y*2);
+  }
+
+  edges() {
+    if (this.pos.x > width) this.pos.x = 0;
+    if (this.pos.x < 0) this.pos.x = width;
+    if (this.pos.y > height) this.pos.y = 0;
+    if (this.pos.y < 0) this.pos.y = height;
+  }
+}
+
+function keyPressed() {
+  if (key === ' ') useCam = !useCam;
+  if (key === 's' || key === 'S') saveCanvas('mapa_cataclismo', 'png');
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  cols = floor(width / scl);
+  rows = floor(height / scl);
+  flowfield = new Array(cols * rows);
+}
+</script>
+</body>
+</html>
