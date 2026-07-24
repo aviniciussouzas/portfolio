@@ -11,6 +11,17 @@
   justify-content: space-between;
   padding: 1.6rem var(--gutter);
   border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 243, 238, 0.86);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Fallback pra navegadores sem suporte a backdrop-filter: fundo sólido em vez de translúcido */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-nav { background: var(--paper); }
 }
 
 .nav-logo {
@@ -32,6 +43,7 @@
   letter-spacing: 0.03em;
   color: var(--ink-soft);
   transition: color 0.2s var(--ease);
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--ink); }
 
@@ -48,10 +60,22 @@
   width: 7px; height: 7px;
   border-radius: 50%;
   background: var(--accent);
+  flex-shrink: 0;
 }
 
+/* Antes disso os links sumiam de vez < 860px — agora eles encolhem
+   e continuam visíveis em qualquer largura de tela. */
 @media (max-width: 860px) {
-  .nav-links { display: none; }
+  .site-nav { padding: 1.1rem var(--gutter); }
+  .nav-links { gap: 1.1rem; }
+  .nav-links a { font-size: 0.72rem; }
+}
+
+@media (max-width: 560px) {
+  .nav-links { gap: 0.7rem; }
+  .nav-links a { font-size: 0.66rem; }
+  .nav-logo { font-size: 0.92rem; }
+  .nav-meta { display: none; } /* relógio some primeiro pra dar espaço aos links, que são o essencial */
 }
 
 /* ===== HERO ===== */

@@ -39,7 +39,7 @@
 
 @media (max-width: 720px) {
   :root {
-    --gutter: 1.25rem;
-    --gutter-lg: 2rem;
+    --gutter: 1.5rem;
+    --gutter-lg: 2.2rem;
   }
 }
