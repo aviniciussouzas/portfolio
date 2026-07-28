@@ -44,7 +44,7 @@ setInterval(updateClock, 1000 * 30);
 
     totalLabel.textContent = String(items.length).padStart(2, '0');
 
-    function render(index, moveFocus = false) {
+    function render(index, moveFocus = false, isInitial = false) {
       current = (index + items.length) % items.length;
       const item = items[current];
       mainButton.classList.add('is-changing');
@@ -60,7 +60,9 @@ setInterval(updateClock, 1000 * 30);
           thumb.classList.toggle('is-active', active);
           thumb.setAttribute('aria-current', active ? 'true' : 'false');
         });
-        thumbs[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        if (!isInitial) {
+          thumbs[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
         mainButton.classList.remove('is-changing');
         if (moveFocus) mainButton.focus();
         updateLightbox();
@@ -100,7 +102,7 @@ setInterval(updateClock, 1000 * 30);
       if (event.key === 'ArrowRight') render(current + 1);
     });
 
-    render(0);
+    render(0, false, true);
   });
 })();
 
@@ -153,3 +155,119 @@ loadSubstackPosts({
       <p class="writing-row-excerpt">${post.excerpt}</p>
     </div>`,
 });
+
+// ===== Galeria Multimídia (.media-gallery + .media-lightbox) =====
+// Estilo sem chrome: sem card, sem fundo, sem botão sólido — a imagem/vídeo
+// é o próprio protagonista. Lê os thumbs direto do HTML (data-type,
+// data-src, data-caption), sem duplicar dado em array separado.
+(function initMediaGallery() {
+  const gallery = document.querySelector('.media-gallery');
+  const lightbox = document.querySelector('.media-lightbox');
+  if (!gallery || !lightbox) return;
+
+  const thumbs = [...gallery.querySelectorAll('[data-src]')];
+  if (!thumbs.length) return;
+
+  const items = thumbs.map((thumb) => ({
+    type: thumb.dataset.type || 'image',
+    src: thumb.dataset.src,
+    caption: thumb.dataset.caption || '',
+  }));
+
+  let current = 0;
+
+  const stage = gallery.querySelector('[data-media-stage]');
+  const openBtn = gallery.querySelector('[data-media-open]');
+  const caption = gallery.querySelector('[data-media-caption]');
+  const currentLabel = gallery.querySelector('[data-media-current]');
+  const totalLabel = gallery.querySelector('[data-media-total]');
+  const prevBtn = gallery.querySelector('[data-media-prev]');
+  const nextBtn = gallery.querySelector('[data-media-next]');
+
+  const lbStage = lightbox.querySelector('[data-media-lightbox-stage]');
+  const lbCaption = lightbox.querySelector('[data-media-lightbox-caption]');
+  const lbPrev = lightbox.querySelector('[data-media-lightbox-prev]');
+  const lbNext = lightbox.querySelector('[data-media-lightbox-next]');
+  const lbClose = lightbox.querySelector('[data-media-close]');
+
+  totalLabel.textContent = String(items.length).padStart(2, '0');
+
+  function buildMediaEl(item, { autoplayMuted = false, withControls = false } = {}) {
+    if (item.type === 'video') {
+      const v = document.createElement('video');
+      v.src = item.src;
+      v.playsInline = true;
+      v.preload = 'metadata';
+      if (withControls) v.controls = true;
+      if (autoplayMuted) { v.muted = true; v.autoplay = true; v.loop = true; }
+      return v;
+    }
+    const img = document.createElement('img');
+    img.src = item.src;
+    img.alt = item.caption;
+    return img;
+  }
+
+  // Troca a mídia do palco principal com um crossfade quase imperceptível
+  function render(index, { isInitial = false } = {}) {
+    current = (index + items.length) % items.length;
+    const item = items[current];
+
+    const swap = () => {
+      stage.innerHTML = '';
+      stage.appendChild(buildMediaEl(item, { autoplayMuted: item.type === 'video' }));
+      caption.textContent = item.caption;
+      currentLabel.textContent = String(current + 1).padStart(2, '0');
+      thumbs.forEach((t, i) => t.classList.toggle('is-active', i === current));
+      requestAnimationFrame(() => stage.classList.remove('is-swapping'));
+      if (lightbox.open) renderLightbox();
+    };
+
+    if (isInitial) {
+      swap();
+    } else {
+      stage.classList.add('is-swapping');
+      setTimeout(swap, 140);
+    }
+  }
+
+  function renderLightbox() {
+    const item = items[current];
+    lbStage.innerHTML = '';
+    lbStage.appendChild(buildMediaEl(item, { withControls: item.type === 'video' }));
+    lbCaption.textContent = `${String(current + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')} — ${item.caption}`;
+  }
+
+  prevBtn.addEventListener('click', () => render(current - 1));
+  nextBtn.addEventListener('click', () => render(current + 1));
+  thumbs.forEach((t, i) => t.addEventListener('click', () => render(i)));
+
+  openBtn.addEventListener('click', () => {
+    renderLightbox();
+    lightbox.showModal();
+    document.body.style.overflow = 'hidden';
+  });
+
+  lbClose.addEventListener('click', () => lightbox.close());
+  lbPrev.addEventListener('click', () => render(current - 1));
+  lbNext.addEventListener('click', () => render(current + 1));
+
+  lightbox.addEventListener('close', () => {
+    document.body.style.overflow = '';
+    const v = lbStage.querySelector('video');
+    if (v) v.pause();
+  });
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const relevant = lightbox.open || gallery.contains(document.activeElement);
+    if (!relevant) return;
+    if (e.key === 'ArrowLeft') render(current - 1);
+    if (e.key === 'ArrowRight') render(current + 1);
+    if (e.key === 'Escape' && lightbox.open) lightbox.close();
+  });
+
+  render(0, { isInitial: true });
+})();

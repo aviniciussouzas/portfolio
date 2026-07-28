@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Andrê Vinicius — Estratégia, Design, Sistemas</title>
   <meta name="description" content="Direção criativa e design estratégico para marcas, produtos e experiências que movem pessoas e negócios." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Andrê Vinicius — Estratégia, Design, Sistemas" />
+  <meta property="og:description" content="Direção criativa e design estratégico para marcas, produtos e experiências que movem pessoas e negócios." />
+  <meta property="og:image" content="https://portfolio-andre-design.vercel.app/assets/og/cover.jpg" />
+  <meta property="og:url" content="https://portfolio-andre-design.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -15,7 +24,7 @@
   <header class="site-nav">
     <a href="index.html" class="nav-logo">AVS</a>
     <ul class="nav-links">
-      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
       <li><a href="sobre.html">Sobre</a></li>
       <li><a href="experimentos.html">Experimentos</a></li>
       <li><a href="escritos.html">Escritos</a></li>
@@ -34,8 +43,9 @@
       <h1 class="hero-title">Estratégia.<br>Design.<br>Sistemas.</h1>
       <div class="hero-rule"></div>
       <p class="hero-desc">Direção criativa e design estratégico para marcas, produtos e experiências que movem pessoas e negócios.</p>
-      <div class="hero-cta">
+      <div class="hero-cta" style="display:flex; gap:1.6rem; align-items:center; flex-wrap:wrap;">
         <a href="#projetos" class="link-arrow">Ver projetos →</a>
+        <a href="contato.html" class="link-arrow" style="color:var(--ink-soft);">Falar comigo →</a>
       </div>
     </div>
     <div class="hero-portrait">
@@ -43,10 +53,33 @@
     </div>
   </section>
 
+  <!-- POOL DE MARCAS -->
+  <section class="brand-pool">
+    <h2 class="eyebrow brand-pool-label">Marcas atendidas ao longo da trajetória</h2>
+    <div class="brand-pool-grid">
+      <div class="brand-pool-item"><img src="assets/marcas/huawei.png" alt="Huawei"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/sanrio.png" alt="Sanrio (Hello Kitty)"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/dentsply-sirona.jpeg" alt="Dentsply Sirona"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/pilot.webp" alt="Pilot"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/lubrizol.png" alt="Lubrizol"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/sesame-street.webp" alt="Sesame Street"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/dreame.jpg" alt="Dreame"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/history.svg" alt="History"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/pagueveloz.png" alt="Pague Veloz by Serasa"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/biore.png" alt="Bioré"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/infracommerce.png" alt="Infracommerce"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/kwai-shop.png" alt="Kwai Shop"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/FAAP.png" alt="FAAP"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/Roku_logo.svg.webp" alt="ROKU"></div>
+      <div class="brand-pool-item"><img src="assets/marcas/VDO_Automotive.svg" alt="VDO"></div>
+    </div>
+  </section>
+
   <!-- PROJETOS -->
   <section id="projetos">
     <div class="projects-head">
-      <span class="eyebrow">Projetos Selecionados</span>
+      <h2 class="eyebrow" style="margin:0;">Projetos Selecionados</h2>
+      <a href="projetos.html" class="link-arrow">Ver todos →</a>
     </div>
     <div class="projects-grid">
 
@@ -69,7 +102,7 @@
         <div class="project-meta">
           <div class="project-num">02</div>
           <h3 class="project-title">SINAL.</h3>
-          <p class="project-desc">Sistema de gestão colaborativa para times de design. Indicadores, rituais e visibilidade para tomar melhores decisões.</p>
+          <p class="project-desc">Protocolo de coordenação que torna visível a capacidade operacional de equipes criativas.</p>
           <span class="link-arrow">→</span>
         </div>
       </a>
@@ -98,14 +131,52 @@
         </div>
       </a>
 
+      <a href="cases/cnp-seguradora.html" class="project-card">
+        <div class="project-thumb">
+          <img src="assets/colagens/CNP.png" alt="">
+        </div>
+        <div class="project-meta">
+          <div class="project-num">05</div>
+          <h3 class="project-title">CNP Seguradora</h3>
+          <p class="project-desc">Sistema editorial para redes sociais — consistência de marca sem abrir mão de diferenciação por editoria.</p>
+          <span class="link-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials">
+    <h2 class="eyebrow testimonials-label">Depoimentos</h2>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"[Depoimento — cole aqui assim que receber. 2-3 frases, no tom da pessoa.]"</p>
+        <p class="testimonial-author">[Nome]</p>
+        <p class="testimonial-role">[Função — Projeto/Empresa]</p>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"[Depoimento — cole aqui assim que receber.]"</p>
+        <p class="testimonial-author">[Nome]</p>
+        <p class="testimonial-role">[Função — Projeto/Empresa]</p>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"[Depoimento — cole aqui assim que receber.]"</p>
+        <p class="testimonial-author">[Nome]</p>
+        <p class="testimonial-role">[Função — Projeto/Empresa]</p>
+      </div>
+
     </div>
   </section>
 
   <!-- SOBRE + ESCRITOS -->
   <section class="about-row">
     <div class="about-copy">
-      <span class="eyebrow">Sobre</span>
-      <h2 class="about-title">Conecto estratégia, design e tecnologia para criar sistemas que conectam pessoas, negócios e cultura.</h2>
+      <h2 class="eyebrow" style="margin:0 0 0.6rem;">Sobre</h2>
+      <h3 class="about-title">Conecto estratégia, design e tecnologia para criar sistemas que conectam pessoas, negócios e cultura.</h3>
       <p class="about-sub">15 anos de experiência liderando equipes e projetos para marcas nacionais e globais.</p>
       <a href="sobre.html" class="link-arrow">Mais sobre →</a>
     </div>
@@ -115,7 +186,7 @@
     </div>
 
     <div class="writings">
-      <span class="eyebrow writings-label">Escritos Recentes</span>
+      <h2 class="eyebrow writings-label" style="margin:0 0 1rem;">Escritos Recentes</h2>
       <div data-substack-home>
         <p style="color:var(--ink-faint); font-size: var(--size-small);">Carregando…</p>
       </div>

@@ -184,7 +184,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
 }
@@ -236,7 +236,7 @@
 
 @media (max-width: 960px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .project-card:nth-child(2) { border-right: none; }
+  .project-card:nth-child(2n) { border-right: none; }
 }
 @media (max-width: 560px) {
   .projects-grid { grid-template-columns: 1fr; }
@@ -311,4 +311,87 @@
 
 @media (max-width: 640px) {
   .site-footer { flex-direction: column; gap: 0.8rem; text-align: center; }
+}
+
+/* ===== POOL DE MARCAS ===== */
+.brand-pool {
+  padding: 2.2rem var(--gutter);
+  border-bottom: 1px solid var(--rule);
+}
+
+.brand-pool-label {
+  display: block;
+  margin-bottom: 1.4rem;
+}
+
+.brand-pool-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+}
+
+/* Caixa de tamanho fixo — cada logo é centralizado dentro dela,
+   então todas ficam com a MESMA área visual, não só a mesma altura. */
+.brand-pool-item {
+  width: clamp(88px, 11vw, 108px);
+  height: clamp(38px, 4.5vw, 46px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-pool-item img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) contrast(0.9);
+  opacity: 0.68;
+  transition: opacity 0.25s var(--ease);
+}
+.brand-pool-item:hover img { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-pool-item img { transition: none; }
+}
+
+/* ===== DEPOIMENTOS ===== */
+.testimonials {
+  padding: 3rem var(--gutter);
+  border-bottom: 1px solid var(--rule);
+}
+
+.testimonials-label {
+  display: block;
+  margin-bottom: 1.8rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.testimonial-card {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.2rem;
+}
+
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-bottom: 0.9rem;
+}
+
+.testimonial-author { font-size: var(--size-small); color: var(--ink); }
+.testimonial-role { font-size: var(--size-micro); color: var(--ink-faint); letter-spacing: 0.03em; }
+
+@media (max-width: 860px) {
+  .testimonials-grid { grid-template-columns: 1fr; gap: 2rem; }
 }

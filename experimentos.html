@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experimentos — Andrê Vinicius</title>
+
+  <meta name="description" content="Código, sistemas generativos e visão computacional — território de investigação fora do briefing." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Experimentos — Andrê Vinicius" />
+  <meta property="og:description" content="Código, sistemas generativos e visão computacional — território de investigação fora do briefing." />
+  <meta property="og:image" content="https://portfolio-andre-design.vercel.app/assets/og/cover.jpg" />
+  <meta property="og:url" content="https://portfolio-andre-design.vercel.app/experimentos.html" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -14,7 +23,7 @@
   <header class="site-nav">
     <a href="index.html" class="nav-logo">AVS</a>
     <ul class="nav-links">
-      <li><a href="index.html#projetos">Projetos</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
       <li><a href="sobre.html">Sobre</a></li>
       <li><a href="experimentos.html">Experimentos</a></li>
       <li><a href="escritos.html">Escritos</a></li>
@@ -35,88 +44,67 @@
   <div class="experiments-grid">
 
     <!-- LIVE -->
-    <div class="experiment-card">
+    <a href="https://judgment-console.vercel.app/" target="_blank" rel="noopener" class="experiment-card">
       <div class="experiment-thumb">
-        <img src="assets/experimentos/01.png" alt=""> 
-      </div>
-      <span class="experiment-tag">p5.js · Tipografia Generativa</span>
-      <h3 class="experiment-title">Tipo Sensível</h3>
-      <p class="experiment-desc">Pesquisa em comportamento tipográfico e sistemas generativos, estruturada em uma taxonomia própria: Partícula, Campo, Forma.</p>
-      <a href="https://tipo-sensivel.vercel.app/" target="_blank" rel="noopener" class="link-arrow">Ver experimento →</a>
-    </div>
-
-    <div class="experiment-card">
-      <div class="experiment-thumb">
-      <img src="assets/experimentos/02.png" alt="">
+        <img src="assets/experimentos/02.png" alt="">
       </div>
       <span class="experiment-tag">IA · Critérios de Julgamento</span>
-      <h3 class="experiment-title">Judgment Console</h3>
+      <h2 class="experiment-title">Judgment Console</h2>
       <p class="experiment-desc">Não é sobre avaliar imagem — é sobre um problema mais amplo: hoje gerar deixou de ser o gargalo, julgar é. Uma investigação sobre quais critérios tornam uma ideia original em vez de "aislop".</p>
-      <a href="https://judgment-console.vercel.app/" target="_blank" rel="noopener" class="link-arrow">Ver experimento →</a>
-    </div>
+      <span class="link-arrow">Ver experimento →</span>
+    </a>
 
-    <div class="experiment-card">
+    <a href="experiments/traco-de-vento.html" class="experiment-card">
       <div class="experiment-thumb">
         <img src="assets/experimentos/03.png" alt="">
       </div>
       <span class="experiment-tag">p5.js · Desenho Generativo</span>
-      <h3 class="experiment-title">Traço de Vento</h3>
+      <h2 class="experiment-title">Traço de Vento</h2>
       <p class="experiment-desc">Rastros de tinta que seguem o movimento do mouse com atraso e ruído — cada traço carrega sua própria inércia, criando uma caligrafia que ninguém desenhou de propósito.</p>
-      <a href="experiments/traco-de-vento.html" class="link-arrow">Ver experimento →</a>
-    </div>
+      <span class="link-arrow">Ver experimento →</span>
+    </a>
 
-    <div class="experiment-card">
+    <a href="experiments/mapa-de-ventos.html" class="experiment-card">
       <div class="experiment-thumb">
-        <img src="assets/experimentos/04.png" alt="">
+        <img src="assets/experimentos/04.png" alt="Mapa de Ventos e Cataclismos">
       </div>
       <span class="experiment-tag">p5.js · Visão Computacional · Agendas Secretas</span>
-      <h3 class="experiment-title">Mapa de Ventos e Cataclismos</h3>
+      <h2 class="experiment-title">Mapa de Ventos e Cataclismos</h2>
       <p class="experiment-desc">Campo de partículas guiado por ruído de Perlin, reagindo ao brilho captado pela webcam em tempo real — um estudo iniciado a partir de visão computacional que virou paisagem própria. Pede acesso à câmera.</p>
-      <a href="experiments/mapa-de-ventos.html" class="link-arrow">Ver experimento →</a>
-    </div>
+      <span class="link-arrow">Ver experimento →</span>
+    </a>
 
     <!-- EM ANDAMENTO -->
-        <div class="experiment-card">
+        <a href="experiments/visao-computacional.html" class="experiment-card">
       <div class="experiment-thumb">
-      <img src="assets/experimentos/05.png" alt="">
+        <img src="assets/experimentos/05.png" alt="Visão Computacional — Detecção de Bordas">
       </div>
       <span class="experiment-tag">p5.js · OpenCV.js</span>
-      <h3 class="experiment-title">Visão Computacional — Detecção de Bordas</h3>
+      <h2 class="experiment-title">Visão Computacional — Detecção de Bordas</h2>
       <p class="experiment-desc">Continuação do estudo de visão computacional: detecção de bordas em tempo real via webcam (Canny), com leitura de densidade de borda e energia de movimento quadro a quadro. Pede acesso à câmera.</p>
-      <a href="experiments/visao-computacional.html" class="link-arrow">Ver experimento →</a>
-    </div>
+      <span class="link-arrow">Ver experimento →</span>
+    </a>
 
     <!-- CÓDIGO NO GITHUB, AGUARDANDO DEPLOY -->
-    <div class="experiment-card">
+    <a href="https://gerador-padroes-geometricos.vercel.app/" target="_blank" rel="noopener" class="experiment-card">
       <div class="experiment-thumb">
-        <img src="assets/experimentos/06.png" alt="">
+        <img src="assets/experimentos/08.png" alt="Gerador de Padrões Geométricos">
       </div>
       <span class="experiment-tag">p5.js · Padrões Geométricos</span>
-      <h3 class="experiment-title">Gerador de Padrões Geométricos</h3>
+      <h2 class="experiment-title">Gerador de Padrões Geométricos</h2>
       <p class="experiment-desc">Gerador interativo de padrões geométricos em p5.js, pensado para produção de peças para redes sociais.</p>
-      <a href="https://gerador-padroes-geometricos.vercel.app/" target="_blank" rel="noopener" class="link-arrow">Ver experimento →</a>
-    </div>
+      <span class="link-arrow">Ver experimento →</span>
+    </a>
 
-    <div class="experiment-card">
+    <a href="https://playbook-operacao-design.vercel.app/" target="_blank" rel="noopener" class="experiment-card">
       <div class="experiment-thumb">
-        <img src="assets/experimentos/07.png" alt="">
+        <img src="assets/experimentos/07.png" alt="Design Playbook">
       </div>
       <span class="experiment-tag">Next.js · TypeScript</span>
-      <h3 class="experiment-title">Design Playbook</h3>
+      <h2 class="experiment-title">Design Playbook</h2>
       <p class="experiment-desc">Sistema autoral de documentação e operação criativa — o desafio deixa de ser gerar e passa a ser julgar, decidir e manter consistência em escala.</p>
-      <a href="https://playbook-operacao-design.vercel.app/" target="_blank" rel="noopener" class="link-arrow">Ver experimento →</a>
-    </div>
-
-<div class="experiment-card">
-      <div class="experiment-thumb">
-        <img src="assets/experimentos/08.png" alt="">
-      </div>
-      <span class="experiment-tag">p5.js · WebGL</span>
-      <h3 class="experiment-title">Jardim Onírico</h3>
-      <p class="experiment-desc">Jardim generativo em camadas persistentes — cada sessão de uso acumula como uma camada visual permanente, uma "estratigrafia" de interação.</p>
-      <span class="experiment-tag" style="color:var(--ink-faint);">Em desenvolvimento</span>
-    </div>
-
+      <span class="link-arrow">Ver experimento →</span>
+    </a>
   </div>
 
   <footer class="site-footer">

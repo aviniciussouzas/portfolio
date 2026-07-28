@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CorpX × MT Pagamentos — Andrê Vinicius</title>
+
+  <meta name="description" content="Diagnóstico estratégico, workshops e alinhamento executivo para reposicionar a marca CorpX × MT Pagamentos." />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="CorpX × MT Pagamentos — Andrê Vinicius" />
+  <meta property="og:description" content="Diagnóstico estratégico, workshops e alinhamento executivo para reposicionar a marca CorpX × MT Pagamentos." />
+  <meta property="og:image" content="https://portfolio-andre-design.vercel.app/assets/og/cover.jpg" />
+  <meta property="og:url" content="https://portfolio-andre-design.vercel.app/cases/corpx-mt-pagamentos.html" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
@@ -14,7 +23,7 @@
   <header class="site-nav">
     <a href="../index.html" class="nav-logo">AVS</a>
     <ul class="nav-links">
-      <li><a href="../index.html#projetos">Projetos</a></li>
+      <li><a href="../projetos.html">Projetos</a></li>
       <li><a href="../sobre.html">Sobre</a></li>
       <li><a href="../experimentos.html">Experimentos</a></li>
       <li><a href="../escritos.html">Escritos</a></li>
@@ -27,7 +36,7 @@
   </header>
 
   <div class="case-nav-back">
-    <a href="../index.html#projetos" class="link-arrow">← Todos os projetos</a>
+    <a href="../projetos.html" class="link-arrow">← Todos os projetos</a>
   </div>
 
   <!-- A colagem é a primeira tela do case — não um mockup -->
@@ -48,25 +57,25 @@
   <section class="case-body">
     <div class="case-section">
       <span class="eyebrow">Problema</span>
-      <h3>[descreva o contexto de negócio que motivou o projeto]</h3>
+      <h2>[descreva o contexto de negócio que motivou o projeto]</h2>
       <p>[Complete com o cenário antes do projeto — o que não funcionava na marca ou no posicionamento.]</p>
     </div>
 
     <div class="case-section">
       <span class="eyebrow">Pesquisa & Diagnóstico</span>
-      <h3>Investigação antes da decisão</h3>
+      <h2>Investigação antes da decisão</h2>
       <p>Projeto de estratégia de marca conduzido a partir de pesquisa e diagnóstico, identificando as tensões e oportunidades reais antes de qualquer proposta de posicionamento.</p>
     </div>
 
     <div class="case-section">
       <span class="eyebrow">Processo</span>
-      <h3>Workshops e alinhamento executivo</h3>
+      <h2>Workshops e alinhamento executivo</h2>
       <p>Workshops de alinhamento conduzidos diretamente com lideranças executivas, construindo em conjunto o posicionamento e a narrativa da marca — não uma entrega isolada do time criativo.</p>
     </div>
 
     <div class="case-section">
       <span class="eyebrow">Resultado</span>
-      <h3>[complete com o resultado alcançado]</h3>
+      <h2>[complete com o resultado alcançado]</h2>
       <p>[Posicionamento e narrativa definidos, prontos para orientar o próximo ciclo de crescimento da marca.]</p>
     </div>
 
@@ -90,53 +99,43 @@
       </div>
     </div>
 
-    <!-- GALERIA — imagem grande + trilha de thumbnails + lightbox -->
-    <section class="case-gallery" aria-labelledby="gallery-title" data-lightbox-root="#lightbox-corpx">
-      <div class="gallery-heading">
-        <span class="eyebrow" id="gallery-title">Galeria</span>
-        <p class="gallery-counter" aria-live="polite"><span data-current>01</span> / <span data-total>05</span></p>
+    <!-- GALERIA MULTIMÍDIA — imagens e vídeo no mesmo fluxo -->
+    <section class="media-gallery" aria-labelledby="gallery-title">
+      <div class="media-gallery__head">
+        <h2 class="eyebrow" id="gallery-title" style="margin:0;">Galeria</h2>
+        <p class="media-gallery__counter" aria-live="polite"><span data-media-current>01</span> / <span data-media-total>05</span></p>
       </div>
 
-      <div class="gallery-stage">
-        <button class="gallery-main" type="button" aria-label="Expandir imagem atual" data-open-lightbox>
-          <img src="../assets/colagens/corpx-01.jpg" alt="CorpX × MT Pagamentos — peça 1" data-gallery-main>
-          <span class="gallery-expand-badge">Expandir ↗</span>
+      <div class="media-gallery__stage">
+        <button class="media-gallery__open" type="button" aria-label="Expandir mídia atual" data-media-open>
+          <span class="media-gallery__media" data-media-stage>
+            <img src="../assets/colagens/corpx-01.jpg" alt="CorpX × MT Pagamentos — peça 1">
+          </span>
+          <span class="media-gallery__expand">Expandir ↗</span>
         </button>
-
-        <div class="gallery-controls" aria-label="Controles da galeria">
-          <button class="gallery-arrow" type="button" data-prev aria-label="Imagem anterior">←</button>
-          <p class="gallery-caption" data-caption>CorpX × MT Pagamentos — peça 1</p>
-          <button class="gallery-arrow" type="button" data-next aria-label="Próxima imagem">→</button>
-        </div>
       </div>
 
-      <div class="gallery-thumbs" role="list" aria-label="Selecionar imagem">
-        <button class="gallery-thumb is-active" type="button" role="listitem" aria-label="Ver imagem 1">
-          <img src="../assets/colagens/corpx-01.jpg" alt="CorpX × MT Pagamentos — peça 1">
-        </button>
-        <button class="gallery-thumb" type="button" role="listitem" aria-label="Ver imagem 2">
-          <img src="../assets/colagens/corpx-02.jpg" alt="CorpX × MT Pagamentos — peça 2">
-        </button>
-        <button class="gallery-thumb" type="button" role="listitem" aria-label="Ver imagem 3">
-          <img src="../assets/colagens/corpx-03.jpg" alt="CorpX × MT Pagamentos — peça 3">
-        </button>
-        <button class="gallery-thumb" type="button" role="listitem" aria-label="Ver imagem 4">
-          <img src="../assets/colagens/corpx-04.jpg" alt="CorpX × MT Pagamentos — peça 4">
-        </button>
-        <button class="gallery-thumb" type="button" role="listitem" aria-label="Ver imagem 5">
-          <img src="../assets/colagens/corpx-05.jpg" alt="CorpX × MT Pagamentos — peça 5">
-        </button>
+      <div class="media-gallery__controls" aria-label="Controles da galeria">
+        <button class="media-gallery__arrow" type="button" data-media-prev aria-label="Mídia anterior">←</button>
+        <p class="media-gallery__caption" data-media-caption>CorpX × MT Pagamentos — peça 1</p>
+        <button class="media-gallery__arrow" type="button" data-media-next aria-label="Próxima mídia">→</button>
+      </div>
+
+      <div class="media-gallery__thumbs" role="list" aria-label="Selecionar mídia">
+        <button class="media-gallery__thumb is-active" type="button" role="listitem" data-type="image" data-src="../assets/colagens/corpx-01.jpg" data-caption="CorpX × MT Pagamentos — peça 1" aria-label="Ver imagem 1"><img src="../assets/colagens/corpx-01.jpg" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/colagens/corpx-02.jpg" data-caption="CorpX × MT Pagamentos — peça 2" aria-label="Ver imagem 2"><img src="../assets/colagens/corpx-02.jpg" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/colagens/corpx-03.jpg" data-caption="CorpX × MT Pagamentos — peça 3" aria-label="Ver imagem 3"><img src="../assets/colagens/corpx-03.jpg" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/colagens/corpx-04.jpg" data-caption="CorpX × MT Pagamentos — peça 4" aria-label="Ver imagem 4"><img src="../assets/colagens/corpx-04.jpg" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/colagens/corpx-05.jpg" data-caption="CorpX × MT Pagamentos — peça 5" aria-label="Ver imagem 5"><img src="../assets/colagens/corpx-05.jpg" alt=""></button>
       </div>
     </section>
 
-    <dialog class="gallery-lightbox" id="lightbox-corpx" aria-label="Visualização ampliada">
-      <button class="lightbox-close" type="button" data-close-lightbox aria-label="Fechar">Fechar ×</button>
-      <button class="lightbox-arrow lightbox-prev" type="button" data-lightbox-prev aria-label="Imagem anterior">←</button>
-      <figure class="lightbox-figure">
-        <img src="" alt="" data-lightbox-image>
-        <figcaption data-lightbox-caption></figcaption>
-      </figure>
-      <button class="lightbox-arrow lightbox-next" type="button" data-lightbox-next aria-label="Próxima imagem">→</button>
+    <dialog class="media-lightbox" id="media-lightbox" aria-label="Visualização ampliada">
+      <button class="media-lightbox__close" type="button" data-media-close aria-label="Fechar">Fechar ×</button>
+      <button class="media-lightbox__arrow media-lightbox__prev" type="button" data-media-lightbox-prev aria-label="Mídia anterior">←</button>
+      <div class="media-lightbox__media" data-media-lightbox-stage></div>
+      <p class="media-lightbox__caption" data-media-lightbox-caption></p>
+      <button class="media-lightbox__arrow media-lightbox__next" type="button" data-media-lightbox-next aria-label="Próxima mídia">→</button>
     </dialog>
   </section>
 
