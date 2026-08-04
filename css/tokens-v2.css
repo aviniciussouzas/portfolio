@@ -1,0 +1,77 @@
+/* ============================================
+   DESIGN TOKENS — AVS Portfolio v2
+   Sistema editorial compartilhado
+   ============================================ */
+
+:root {
+  /* Base */
+  --paper: #F5F3EE;
+  --paper-alt: #EFECE5;
+  --ink: #141414;
+  --ink-soft: rgba(20, 20, 20, 0.62);
+  --ink-faint: rgba(20, 20, 20, 0.34);
+  --rule: rgba(20, 20, 20, 0.14);
+  --rule-soft: rgba(20, 20, 20, 0.08);
+
+  /* Tema padrão — pode ser sobrescrito no body de cada case */
+  --case-accent: #1D3E8C;
+  --case-accent-soft: rgba(29, 62, 140, 0.10);
+  --accent: var(--case-accent);
+  --accent-soft: var(--case-accent-soft);
+
+  /* Tipografia */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Escala tipográfica global */
+  --size-hero: clamp(2.6rem, 6.5vw, 5.4rem);
+  --size-h2: clamp(1.6rem, 3vw, 2.2rem);
+  --size-h3: 1.25rem;
+  --size-body: 1rem;
+  --size-small: 0.8125rem;
+  --size-micro: 0.6875rem;
+
+  /* Escala específica de cases */
+  --case-title-sm: clamp(2.8rem, 6vw, 5.5rem);
+  --case-title-md: clamp(3.2rem, 7.5vw, 7rem);
+  --case-title-lg: clamp(3.8rem, 9vw, 8.5rem);
+  --case-lead-title: clamp(1.9rem, 4.2vw, 3.6rem);
+  --case-section-title: clamp(1.45rem, 2.8vw, 2.35rem);
+  --case-metric: clamp(1.8rem, 3.5vw, 3rem);
+
+  /* Espaçamento */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 5rem;
+  --space-8: 7rem;
+
+  --gutter: 2.5rem;
+  --gutter-lg: 4rem;
+  --case-section-gap: clamp(3rem, 7vw, 7rem);
+
+  /* Larguras */
+  --content-wide: 90rem;
+  --content-reading: 72ch;
+  --content-narrow: 42rem;
+
+  /* Forma e movimento */
+  --radius: 2px;
+  --case-rule: 1px solid var(--rule);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-medium: 320ms;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 1.5rem;
+    --gutter-lg: 2.2rem;
+    --case-title-sm: clamp(2.6rem, 14vw, 4.5rem);
+    --case-title-md: clamp(3rem, 15vw, 5.2rem);
+    --case-title-lg: clamp(3.2rem, 16vw, 5.8rem);
+  }
+}

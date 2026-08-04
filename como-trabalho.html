@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Como Trabalho — Andrê Vinicius</title>
+  <meta name="description" content="Direção criativa, design estratégico e pesquisa aplicada para transformar operações complexas em sistemas que conseguem crescer." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Como Trabalho — Andrê Vinicius" />
+  <meta property="og:description" content="Direção criativa, design estratégico e pesquisa aplicada para transformar operações complexas em sistemas que conseguem crescer." />
+  <meta property="og:image" content="https://portfolio-andre-design.vercel.app/assets/og/cover.png" />
+  <meta property="og:url" content="https://portfolio-andre-design.vercel.app/sobre.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <style>
+    .work-page {
+      --work-cobalt: #1D3E8C;
+      --work-burgundy: #7A1F2B;
+      --work-accent: var(--work-cobalt);
+    }
+
+    .work-section-intro {
+      max-width: 62ch;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    /* Foto em cor */
+    .work-manifesto__photo img {
+      filter: none;
+    }
+
+    /* Alternância controlada entre cobalto e bordô */
+    .work-hero__meta .eyebrow,
+    .work-hero__rail span,
+    .work-method .eyebrow,
+    .work-ai .eyebrow,
+    .work-testimonials .eyebrow,
+    .work-library .eyebrow {
+      color: var(--work-cobalt);
+    }
+
+    .work-manifesto .eyebrow,
+    .work-transformations .eyebrow,
+    .work-trajectory .eyebrow,
+    .work-principles .eyebrow,
+    .work-closing .eyebrow {
+      color: var(--work-burgundy);
+    }
+
+    .work-hero__rail span:nth-child(even),
+    .work-method__steps li:nth-child(even) span,
+    .work-ai__grid article:nth-child(even) span,
+    .work-trajectory__grid article:nth-child(even) > span,
+    .work-principles__grid article:nth-child(even) > span {
+      color: var(--work-burgundy);
+    }
+
+    .work-impact__grid article:nth-child(even),
+    .work-principles__grid article:nth-child(even),
+    .work-ai__grid article:nth-child(even) {
+      border-top-color: var(--work-burgundy);
+    }
+
+    .work-transformations__list article:nth-child(odd) .work-transformations__meta span {
+      color: var(--work-cobalt);
+    }
+
+    .work-transformations__list article:nth-child(even) .work-transformations__meta span {
+      color: var(--work-burgundy);
+    }
+
+    .work-method__closing {
+      max-width: 42ch;
+      margin: clamp(2rem, 5vw, 4rem) 0 0 auto;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2.6vw, 2rem);
+      line-height: 1.35;
+    }
+
+    .work-ai {
+      padding: clamp(3rem, 7vw, 6rem) var(--gutter);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .work-ai__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--rule);
+    }
+
+    .work-ai__grid article {
+      min-height: 17rem;
+      padding: 1.25rem 1.35rem 1.5rem;
+      border-left: 1px solid var(--rule);
+      border-top: 3px solid var(--work-cobalt);
+    }
+
+    .work-ai__grid article:first-child {
+      border-left: 0;
+    }
+
+    .work-ai__grid span {
+      display: block;
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+      color: var(--work-cobalt);
+      font-size: var(--size-micro);
+      letter-spacing: .1em;
+    }
+
+    .work-ai__grid h3 {
+      margin-bottom: .9rem;
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    }
+
+    .work-ai__grid p {
+      color: var(--ink-soft);
+      font-size: var(--size-small);
+      line-height: 1.55;
+    }
+
+    /* Transformações integradas */
+    .work-transformations__content > p {
+      margin-bottom: 1.4rem;
+    }
+
+    .work-transformations__evidence {
+      max-width: 66ch;
+      padding: 1.1rem 0;
+      border-top: 1px solid var(--rule-soft);
+    }
+
+    .work-transformations__evidence strong {
+      display: block;
+      margin-bottom: .45rem;
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      font-weight: 400;
+    }
+
+    .work-transformations__evidence p {
+      margin-bottom: .55rem;
+    }
+
+    .work-transformations__evidence small {
+      display: block;
+      color: var(--ink-faint);
+      font-size: var(--size-micro);
+      letter-spacing: .04em;
+    }
+
+    /* Depoimentos compactos */
+    .work-testimonials--compact .work-testimonials__grid {
+      border-top: 1px solid var(--rule);
+      gap: 0;
+    }
+
+    .work-testimonials--compact .work-testimonial {
+      padding: 1.5rem 0 0;
+      background: transparent;
+      border-top: 0;
+    }
+
+    .work-testimonials--compact .work-testimonial:first-child {
+      border-top: 3px solid var(--work-cobalt);
+    }
+
+    .work-testimonials--compact .work-testimonial + .work-testimonial {
+      padding-left: var(--gutter);
+      border-top: 3px solid var(--work-burgundy);
+      border-left: 1px solid var(--rule);
+    }
+
+    .work-testimonials--compact .work-testimonial blockquote {
+      max-width: 34ch;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+      line-height: 1.4;
+    }
+
+    .work-testimonials--compact .work-testimonial figcaption {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    @media (max-width: 980px) {
+      .work-ai__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .work-ai__grid article:nth-child(odd) {
+        border-left: 0;
+      }
+
+      .work-ai__grid article:nth-child(n+3) {
+        border-top-width: 1px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .work-ai__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-ai__grid article,
+      .work-ai__grid article:nth-child(odd) {
+        min-height: auto;
+        padding: 1.25rem 0;
+        border-top: 1px solid var(--rule);
+        border-left: 0;
+      }
+
+      .work-ai__grid span {
+        margin-bottom: 1.5rem;
+      }
+
+      .work-testimonials--compact .work-testimonial + .work-testimonial {
+        margin-top: 2rem;
+        padding-left: 0;
+        border-left: 0;
+      }
+    }
+
+    /* Correção mobile — métricas compactas em linhas */
+    @media (max-width: 680px) {
+      .work-metrics {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100%;
+      }
+
+      .work-metrics article,
+      .work-metrics article + article {
+        display: grid;
+        grid-template-columns: 4.5rem minmax(0, 1fr);
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        min-height: 0;
+        padding: 1.15rem var(--gutter);
+        border-left: 0 !important;
+        border-top: 1px solid var(--rule);
+      }
+
+      .work-metrics article:first-child {
+        border-top: 0;
+      }
+
+      .work-metrics strong {
+        margin: 0;
+        font-size: clamp(2.1rem, 11vw, 3rem);
+        line-height: .9;
+      }
+
+      .work-metrics span {
+        max-width: none;
+        font-size: .82rem;
+        line-height: 1.4;
+      }
+    }
+
+  </style>
+
+</head>
+<body class="work-page">
+  <header class="site-nav">
+    <a href="index.html" class="nav-logo">AVS</a>
+    <ul class="nav-links">
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="como-trabalho.html" aria-current="page">Como Trabalho</a></li>
+      <li><a href="experimentos.html">Experimentos</a></li>
+      <li><a href="escritos.html">Escritos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <div class="nav-meta"><span id="nav-time">—</span><span class="nav-dot"></span></div>
+  </header>
+
+  <main>
+    <section class="work-hero">
+      <div class="work-hero__meta">
+        <span class="eyebrow">Como Trabalho</span>
+        <span class="work-hero__index">Direção criativa · Estratégia · Pesquisa</span>
+      </div>
+      <div class="work-hero__main">
+        <h1>Transformo operações criativas em sistemas que conseguem crescer.</h1>
+        <div class="work-hero__side">
+          <p>Minha atuação combina direção criativa, design estratégico, pesquisa e liderança para tornar decisões mais claras, equipes mais coordenadas e marcas mais consistentes.</p>
+          <a href="contato.html" class="link-arrow">Vamos conversar →</a>
+        </div>
+      </div>
+      <div class="work-hero__rail">
+        <span>Pesquisa</span><span>Framework</span><span>Sistema</span><span>Operação</span>
+      </div>
+    </section>
+
+    <section class="work-manifesto">
+      <div class="work-manifesto__photo"><img src="assets/foto/retrato-sobre.png" alt="Retrato de Andrê Vinicius"></div>
+      <div class="work-manifesto__copy">
+        <span class="eyebrow">Posicionamento</span>
+        <h2>Mais interessado em sistemas do que em estilos.</h2>
+        <p>Comecei minha carreira desenhando campanhas, identidades e experiências digitais. Com o tempo, percebi que meu maior interesse não estava apenas na peça final, mas em entender por que algumas equipes conseguem produzir com clareza enquanto outras dependem de esforço constante.</p>
+        <p>Grande parte da minha trajetória aconteceu em momentos de transformação: novas contas, novas marcas, operações crescendo e equipes assumindo desafios inéditos. Meu trabalho quase sempre foi criar estruturas capazes de organizar essa complexidade.</p>
+        <p>Hoje continuo pesquisando o mesmo tema através da inteligência artificial, do design computacional e da interação humano–IA. Acredito que tecnologia faz sentido quando amplia a capacidade humana — não quando substitui pensamento.</p>
+      </div>
+    </section>
+
+    <section class="work-metrics" aria-label="Indicadores de trajetória">
+      <article><strong>15+</strong><span>anos de experiência</span></article>
+      <article><strong>17</strong><span>contas acompanhadas simultaneamente</span></article>
+      <article><strong>15</strong><span>designers liderados e desenvolvidos</span></article>
+      <article><strong>5+</strong><span>playbooks e protocolos estruturados</span></article>
+      <article><strong>1</strong><span>sistema próprio de gestão: SINAL.</span></article>
+    </section>
+
+    <section class="work-method work-method--refined">
+      <div class="work-section-head">
+        <span class="eyebrow">Metodologia</span>
+        <div>
+          <h2>Do problema à operação.</h2>
+          <p class="work-section-intro">
+            Utilizo o Design Thinking como estrutura para investigação e tomada de decisão,
+            mas não como uma receita pronta. A partir dele, construo frameworks próprios
+            para cada contexto e transformo aprendizados em sistemas que possam ser usados,
+            testados e aprimorados pelas equipes.
+          </p>
+        </div>
+      </div>
+
+      <ol class="work-method__steps" aria-label="Etapas da metodologia">
+        <li>
+          <span>01</span>
+          <h3>Pesquisa</h3>
+          <p>Compreendo contexto, pessoas, restrições, comportamentos e oportunidades.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <h3>Hipóteses</h3>
+          <p>Transformo observações em perguntas e caminhos que merecem ser explorados.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <h3>Framework</h3>
+          <p>Organizo conhecimento em modelos visuais, critérios e ferramentas de decisão.</p>
+        </li>
+        <li>
+          <span>04</span>
+          <h3>Sistema</h3>
+          <p>Traduzo o que funciona em playbooks, rituais, dashboards e protocolos.</p>
+        </li>
+        <li>
+          <span>05</span>
+          <h3>Evolução</h3>
+          <p>Observo o uso, documento aprendizados e ajusto cada ciclo.</p>
+        </li>
+      </ol>
+
+      <p class="work-method__closing">
+        Não entrego apenas projetos. Estruturo formas de trabalhar que continuam gerando valor
+        depois que a entrega termina.
+      </p>
+    </section>
+
+
+    <section class="work-ai">
+      <div class="work-section-head">
+        <span class="eyebrow">Pesquisa e inteligência artificial</span>
+        <div>
+          <h2>A próxima geração de sistemas criativos será colaborativa.</h2>
+          <p class="work-section-intro">
+            Investigo como inteligência artificial pode ampliar — e não substituir — o trabalho
+            criativo. Meu interesse está na relação entre pesquisa, geração de hipóteses,
+            julgamento, documentação e novos modelos de colaboração entre pessoas e sistemas.
+          </p>
+        </div>
+      </div>
+
+      <div class="work-ai__grid">
+        <article>
+          <span>01</span>
+          <h3>Judgment Console</h3>
+          <p>
+            Sistema experimental para tornar explícitos os critérios usados na avaliação
+            de imagens geradas por IA.
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>Tipo Sensível</h3>
+          <p>
+            Pesquisa em design computacional que trata tipografia como corpo, campo e comportamento.
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>SINAL.</h3>
+          <p>
+            Protocolo de inteligência coletiva para tornar capacidade operacional visível e acionável.
+          </p>
+        </article>
+
+        <article>
+          <span>04</span>
+          <h3>Experimentação aplicada</h3>
+          <p>
+            Uso IA, código e sistemas generativos como materiais de pesquisa, prototipagem e linguagem.
+          </p>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="work-transformations work-transformations--integrated">
+      <div class="work-section-head">
+        <span class="eyebrow">Transformações na prática</span>
+        <div>
+          <h2>O que costuma mudar quando entro numa operação.</h2>
+          <p class="work-section-intro">
+            Em vez de separar promessa e prova, reuni aqui os tipos de transformação que
+            se repetem na minha trajetória e os contextos em que elas aconteceram.
+          </p>
+        </div>
+      </div>
+
+      <div class="work-transformations__list">
+        <article>
+          <div class="work-transformations__meta">
+            <span>01</span>
+            <h3>Construção de operações</h3>
+          </div>
+          <div class="work-transformations__content">
+            <p>
+              Estruturo linguagem, critérios e formas de trabalho desde os primeiros projetos,
+              ajudando novas contas a começar com mais consistência.
+            </p>
+            <div class="work-transformations__evidence">
+              <strong>Pilot Pen Brasil</strong>
+              <p>
+                Entrei quando a operação digital da marca ainda estava sendo estruturada no Brasil.
+                Atuei como Diretor de Arte da conta e participei da construção da linguagem visual
+                desde os primeiros projetos. A conta permanece ativa na agência anos depois.
+              </p>
+            </div>
+            <div class="work-transformations__evidence">
+              <strong>Bioré Brasil</strong>
+              <p>
+                Desenvolvi o primeiro playbook de criação para redes sociais da operação brasileira
+                e participei do wireframe da primeira versão do site. Mais do que produzir peças,
+                ajudei a construir uma forma consistente de trabalhar.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <div class="work-transformations__meta">
+            <span>02</span>
+            <h3>Gestão do conhecimento</h3>
+          </div>
+          <div class="work-transformations__content">
+            <p>
+              Transformo conhecimento disperso em documentação viva, reduzindo dependência da memória
+              individual e tornando decisões mais consistentes entre diferentes designers.
+            </p>
+            <div class="work-transformations__evidence">
+              <strong>Documentação de todas as contas ativas</strong>
+              <p>
+                Antes, a operação dependia de brandbooks, style guides, arquivos enviados pelos clientes
+                e, principalmente, do conhecimento do designer responsável. Estruturei um sistema único
+                com contexto da conta, território criativo atual, referências aprovadas ou bem-sucedidas
+                e checklist de qualidade antes do envio ao cliente.
+              </p>
+              <small>Mais autonomia · onboarding mais rápido · decisões mais consistentes</small>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <div class="work-transformations__meta">
+            <span>03</span>
+            <h3>Sistemas e playbooks</h3>
+          </div>
+          <div class="work-transformations__content">
+            <p>
+              Transformo conhecimento tácito em frameworks operacionais que sustentam criação,
+              aprovação e continuidade sem depender apenas de quem participou do início.
+            </p>
+            <div class="work-transformations__evidence">
+              <strong>Nuvemshop · Plasútil · CNP Seguradora · Yamaha Náutica</strong>
+              <p>
+                Estruturei ou conduzi consultorias de criação para traduzir diretrizes de marca,
+                repertório aprovado e necessidades recorrentes em sistemas mais claros para os times.
+              </p>
+            </div>
+            <div class="work-transformations__evidence">
+              <strong>Infracommerce LAT</strong>
+              <p>
+                Assumi a liderança criativa em um momento de baixa governança de marca e relacionamento
+                fragilizado com o cliente. O novo sistema contribuiu para recuperar previsibilidade nas
+                aprovações e para a continuidade da conta na agência.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <div class="work-transformations__meta">
+            <span>04</span>
+            <h3>Desenvolvimento de pessoas</h3>
+          </div>
+          <div class="work-transformations__content">
+            <p>
+              Acompanho crescimento técnico, autonomia e capacidade de decisão, tratando liderança
+              como desenvolvimento e não apenas distribuição de tarefas.
+            </p>
+            <div class="work-transformations__evidence">
+              <strong>Assistente → Designer Pleno</strong>
+              <p>
+                Durante minha liderança, acompanhei a evolução de uma profissional que entrou como
+                Assistente e avançou até Designer Pleno dentro da própria operação.
+              </p>
+              <small>Feedback · mentoria · onboarding · progressão</small>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <div class="work-transformations__meta">
+            <span>05</span>
+            <h3>Escala organizacional</h3>
+          </div>
+          <div class="work-transformations__content">
+            <p>
+              Evoluí de uma gestão compartilhada de Design para responder pela liderança de toda a
+              operação — capacidade, qualidade, desenvolvimento e direção criativa.
+            </p>
+            <div class="work-transformations__evidence">
+              <strong>Coordenação → Design Lead</strong>
+              <p>
+                Passei a liderar 15 designers e acompanhar 17 contas, conectando distribuição de trabalho,
+                desenvolvimento de pessoas, qualidade criativa e prioridades da agência.
+              </p>
+            </div>
+            <div class="work-transformations__evidence">
+              <strong>SINAL.</strong>
+              <p>
+                Criei um protocolo para tornar a capacidade real do time visível. Em 10 semanas,
+                o sistema ajudou a acomodar 21 projetos extras dentro da capacidade existente,
+                reduzindo a necessidade de recorrer a apoio externo no período.
+              </p>
+              <small>15 designers · 17 contas · 21 projetos extras</small>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+<section class="work-testimonials work-testimonials--compact">
+      <div class="work-section-head">
+        <span class="eyebrow">Colaboração</span>
+        <h2>O que colegas disseram sobre trabalhar comigo.</h2>
+      </div>
+
+      <div class="work-testimonials__grid">
+        <figure class="work-testimonial">
+          <blockquote>
+            “Em projetos especialmente desafiadores, pude acompanhar de perto sua capacidade
+            de liderar equipes, resolver problemas e elevar a qualidade da entrega.”
+          </blockquote>
+          <figcaption>
+            <strong>Daniel Zacariotti</strong>
+            <span>Co-Founder &amp; Strategy Director — Ficus</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work-testimonial">
+          <blockquote>
+            “O Andrê transforma qualquer problema em uma solução funcional e com um design
+            impecável. Seu olhar vai do conceito à arte final e oxigena todo o processo,
+            especialmente em telas para Motion.”
+          </blockquote>
+          <figcaption>
+            <strong>Andrew Ramirez</strong>
+            <span>Motion Designer 2D/3D — OK Social</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+<section class="work-trajectory">
+      <div class="work-section-head"><span class="eyebrow">Trajetória</span><h2>Uma evolução de execução para sistema.</h2></div>
+      <div class="work-trajectory__grid">
+        <article><span>2011</span><h3>Primeiros projetos</h3><p>Design gráfico, comunicação interna e endomarketing.</p></article>
+        <article><span>2016</span><h3>Grandes marcas</h3><p>Operações nacionais e LATAM, varejo e bens de consumo.</p></article>
+        <article><span>2019</span><h3>Primeiras lideranças</h3><p>Mentoria, coordenação criativa e consistência de contas.</p></article>
+        <article><span>2024</span><h3>Gestão compartilhada</h3><p>Processos, playbooks, onboarding e distribuição de capacidade.</p></article>
+        <article><span>2026</span><h3>Design Lead</h3><p>Liderança da operação, 15 designers, 17 contas e criação do SINAL.</p></article>
+      </div>
+    </section>
+
+    <section class="work-principles">
+      <div class="work-section-head"><span class="eyebrow">Princípios</span><h2>Quatro ideias que orientam meu trabalho.</h2></div>
+      <div class="work-principles__grid">
+        <article><span>01</span><h3>Sistemas antes de estilos.</h3><p>Design permanece quando vira linguagem compartilhada.</p></article>
+        <article><span>02</span><h3>Processos devem ampliar liberdade.</h3><p>Boa operação reduz atrito sem reduzir criatividade.</p></article>
+        <article><span>03</span><h3>Pesquisa também é projeto.</h3><p>Entender o problema é parte inseparável da criação.</p></article>
+        <article><span>04</span><h3>Tecnologia amplia pessoas.</h3><p>Ferramentas fazem sentido quando expandem capacidade humana.</p></article>
+      </div>
+    </section>
+
+    <section class="work-library">
+      <div class="work-library__intro"><span class="eyebrow">Biblioteca permanente</span><h2>Autores que continuam atravessando meu trabalho.</h2></div>
+      <div class="work-library__map">
+        <article><span>Design e linguagem</span><p>Vilém Flusser · Edward Tufte · Jacques Bertin · Alice Rawsthorn · Richard Saul Wurman</p></article>
+        <article><span>Computação e cultura</span><p>Muriel Cooper · John Maeda · Giselle Beiguelman · André Stolarski</p></article>
+        <article><span>Brasil e projeto</span><p>Lina Bo Bardi · Aloisio Magalhães · Alexandre Wollner · Lucy Niemeyer · Rafael Cardoso</p></article>
+        <article><span>Ciência e afeto</span><p>Jacob Bronowski · Carlo Rovelli · Jaak Panksepp</p></article>
+      </div>
+    </section>
+
+    <section class="work-closing">
+      <span class="eyebrow">Em síntese</span>
+      <h2>Quase sempre fui chamado quando uma operação precisava crescer.</h2>
+      <p>Quando uma equipe precisava ganhar clareza ou uma marca precisava transformar complexidade em sistema. É nesse tipo de problema que gosto de trabalhar.</p>
+      <a href="contato.html" class="link-arrow">Vamos construir sistemas melhores →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Andrê Vinicius de Souza Silva</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/aviniciussouzas" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/avinicius" target="_blank" rel="noopener">Behance</a>
+      <a href="https://github.com/aviniciussouzas" target="_blank" rel="noopener">GitHub</a>
+      <a href="http://are.na/andre-souza/" target="_blank" rel="noopener">Are.na</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>window.va = window.va || function(){(window.vaq = window.vaq || []).push(arguments);};</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

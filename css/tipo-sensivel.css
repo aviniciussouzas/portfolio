@@ -1,0 +1,547 @@
+
+/* =========================================================
+   TIPO SENSÍVEL — identidade local do case
+   Depende de tokens.css, base.css, layout.css e case.css.
+   ========================================================= */
+
+.case-tipo {
+  --tipo-accent: #1D3E8C;
+  --tipo-accent-soft: rgba(29, 62, 140, 0.08);
+}
+
+.case-tipo .case-hero-meta {
+  border-bottom: 1px solid var(--rule);
+}
+
+.case-tipo .case-tag {
+  color: var(--tipo-accent);
+  border-color: rgba(29, 62, 140, 0.18);
+  background: var(--tipo-accent-soft);
+}
+
+.tipo-index {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 1rem var(--gutter) 1.2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tipo-index span {
+  min-width: 0;
+  padding-right: 1rem;
+  font-size: var(--size-micro);
+  line-height: 1.45;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.tipo-index span + span {
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule);
+}
+
+.tipo-index strong {
+  display: block;
+  margin-bottom: .18rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.case-tipo .case-section .eyebrow,
+.case-tipo .media-gallery__head .eyebrow {
+  color: var(--tipo-accent);
+}
+
+.tipo-lead {
+  grid-column: 1 / -1;
+  max-width: 74rem;
+}
+
+.tipo-lead h2 {
+  max-width: 22ch;
+  font-size: clamp(1.9rem, 4.4vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.tipo-lead p {
+  max-width: 72ch;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.tipo-quote {
+  max-width: 34ch;
+  border-left-color: var(--tipo-accent);
+}
+
+.tipo-quote::before {
+  content: "HIPÓTESE / 01";
+  display: block;
+  margin-bottom: .7rem;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: .62rem;
+  letter-spacing: .13em;
+  color: var(--tipo-accent);
+}
+
+.tipo-taxonomia,
+.tipo-inventory,
+.tipo-lineage,
+.tipo-parameters,
+.tipo-metrics,
+.tipo-cta {
+  grid-column: 1 / -1;
+}
+
+.tipo-taxonomia {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) minmax(0, 3fr);
+  gap: var(--gutter);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.tipo-taxonomia__intro h2,
+.tipo-inventory__head h2,
+.tipo-lineage h2,
+.tipo-cta h2 {
+  margin-top: .6rem;
+  font-size: clamp(1.55rem, 3vw, 2.4rem);
+}
+
+.tipo-taxonomia__intro p {
+  max-width: 34ch;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.tipo-taxonomia__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tipo-axis {
+  min-width: 0;
+  padding: 0 1.25rem 1rem;
+  border-left: 1px solid var(--rule);
+}
+
+.tipo-axis__number {
+  display: block;
+  margin-bottom: clamp(2rem, 7vw, 5rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: .8;
+  color: var(--tipo-accent);
+}
+
+.tipo-axis h3 {
+  margin-bottom: .75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 400;
+}
+
+.tipo-axis p {
+  min-height: 6.5em;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.tipo-axis small {
+  display: block;
+  padding-top: .9rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-faint);
+  line-height: 1.5;
+}
+
+.tipo-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) minmax(0, 2fr);
+  column-gap: var(--gutter);
+}
+
+.tipo-wide > .eyebrow,
+.tipo-wide > h2 {
+  grid-column: 1;
+}
+
+.tipo-wide__content {
+  grid-column: 2;
+}
+
+.tipo-wide h2 {
+  max-width: 21ch;
+  font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+}
+
+.tipo-parameters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.tipo-parameters > div {
+  min-width: 0;
+  padding: 1.15rem 1rem 1.3rem 0;
+}
+
+.tipo-parameters > div + div {
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule);
+}
+
+.tipo-parameters span {
+  display: block;
+  margin-bottom: .4rem;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: .68rem;
+  color: var(--ink-faint);
+}
+
+.tipo-parameters strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 400;
+}
+
+.tipo-inventory {
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.tipo-inventory__head {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--gutter);
+  align-items: baseline;
+  margin-bottom: 2rem;
+}
+
+.tipo-inventory__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tipo-inventory__list li {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(10rem, 1fr) minmax(12rem, 2fr);
+  align-items: baseline;
+  gap: 1rem;
+  padding: .8rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.tipo-inventory__list li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.tipo-inventory__list span {
+  font-size: var(--size-micro);
+  letter-spacing: .08em;
+  color: var(--tipo-accent);
+}
+
+.tipo-inventory__list strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.tipo-inventory__list small {
+  color: var(--ink-faint);
+}
+
+.tipo-lineage {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) minmax(0, 3fr);
+  gap: var(--gutter);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.tipo-lineage__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tipo-lineage article {
+  padding: 0 1rem;
+  border-left: 1px solid var(--rule);
+}
+
+.tipo-lineage strong {
+  display: block;
+  margin-bottom: .7rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.tipo-lineage p {
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.tipo-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.tipo-metrics > div {
+  padding: 1.4rem 1.1rem 1.5rem 0;
+}
+
+.tipo-metrics > div + div {
+  padding-left: 1.1rem;
+  border-left: 1px solid var(--rule);
+}
+
+.tipo-metrics strong {
+  display: block;
+  margin-bottom: .35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.tipo-metrics span {
+  display: block;
+  max-width: 18ch;
+  color: var(--ink-faint);
+  font-size: var(--size-small);
+  line-height: 1.4;
+}
+
+.case-tipo .media-gallery__thumb.is-active {
+  border-color: var(--tipo-accent);
+}
+
+.tipo-gallery .media-gallery__caption {
+  letter-spacing: .02em;
+}
+
+.tipo-cta {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: var(--gutter);
+  align-items: start;
+  padding-top: clamp(2.5rem, 6vw, 5rem);
+  border-top: 1px solid var(--rule);
+}
+
+.tipo-cta .eyebrow {
+  color: var(--tipo-accent);
+}
+
+.tipo-cta h2 {
+  margin: 0;
+}
+
+.tipo-cta > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8rem;
+}
+
+.case-tipo .link-cta {
+  color: var(--tipo-accent);
+  border-bottom-color: var(--tipo-accent);
+}
+
+@media (max-width: 900px) {
+  .tipo-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .8rem 0;
+  }
+
+  .tipo-index span:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .tipo-taxonomia,
+  .tipo-lineage,
+  .tipo-wide {
+    display: block;
+  }
+
+  .tipo-taxonomia__intro,
+  .tipo-lineage > div:first-child {
+    margin-bottom: 2rem;
+  }
+
+  .tipo-wide__content {
+    margin-top: 1rem;
+  }
+
+  .tipo-taxonomia__grid,
+  .tipo-lineage__items {
+    grid-template-columns: 1fr;
+  }
+
+  .tipo-axis,
+  .tipo-lineage article {
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--rule);
+    border-left: 0;
+  }
+
+  .tipo-axis__number {
+    margin-bottom: 1rem;
+  }
+
+  .tipo-axis p {
+    min-height: 0;
+  }
+
+  .tipo-parameters,
+  .tipo-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tipo-parameters > div:nth-child(3),
+  .tipo-metrics > div:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .tipo-parameters > div:nth-child(4),
+  .tipo-metrics > div:nth-child(4) {
+    border-top: 1px solid var(--rule);
+  }
+
+  .tipo-inventory__head,
+  .tipo-cta {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .tipo-index {
+    grid-template-columns: 1fr;
+  }
+
+  .tipo-index span,
+  .tipo-index span + span {
+    padding: .55rem 0;
+    border-top: 1px solid var(--rule);
+    border-left: 0;
+  }
+
+  .tipo-inventory__list li {
+    grid-template-columns: 2.5rem 1fr;
+  }
+
+  .tipo-inventory__list small {
+    grid-column: 2;
+  }
+
+  .tipo-parameters,
+  .tipo-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .tipo-parameters > div,
+  .tipo-parameters > div + div,
+  .tipo-metrics > div,
+  .tipo-metrics > div + div {
+    padding: 1rem 0;
+    border-top: 1px solid var(--rule);
+    border-left: 0;
+  }
+
+  .tipo-parameters > div:first-child,
+  .tipo-metrics > div:first-child {
+    border-top: 0;
+  }
+}
+
+
+/* Hero textual — sem colagem duplicando a função da galeria */
+.case-tipo .case-hero--text {
+  min-height: auto;
+  background: var(--paper);
+}
+
+.case-tipo .tipo-hero-meta {
+  display: grid;
+  grid-template-columns: minmax(16rem, 1fr) minmax(20rem, 1.25fr);
+  align-items: end;
+  gap: var(--gutter);
+  padding-top: clamp(3rem, 8vw, 7rem);
+  padding-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.tipo-hero-heading {
+  min-width: 0;
+}
+
+.case-tipo .case-kicker {
+  display: block;
+  margin-bottom: .85rem;
+  font-size: var(--size-micro);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--tipo-accent);
+}
+
+.case-tipo .tipo-hero-meta .case-title {
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  line-height: .92;
+  letter-spacing: -.045em;
+}
+
+.tipo-hero-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-bottom: .35rem;
+}
+
+.case-tipo .case-deck {
+  max-width: 31ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.3vw, 2rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.case-tipo .tipo-hero-side .case-tags {
+  justify-content: flex-start;
+}
+
+@media (max-width: 760px) {
+  .case-tipo .tipo-hero-meta {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .case-tipo .tipo-hero-meta .case-title {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
+
+  .tipo-hero-side {
+    gap: 1.25rem;
+  }
+
+  .case-tipo .case-deck {
+    max-width: 28ch;
+  }
+}
