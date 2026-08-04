@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/case.css">
 </head>
-<body>
+<body class="case-sinal">
 
   <header class="site-nav">
     <a href="../index.html" class="nav-logo">AVS</a>
@@ -52,11 +52,26 @@
         <span class="case-tag">Design de Serviço</span>
       </div>
     </div>
+
+    <div class="signal-scale" aria-label="Escala de capacidade do SINAL, de zero a cinco">
+      <div class="signal-scale__intro">
+        <span class="signal-scale__label">Escala de capacidade</span>
+        <span class="signal-scale__note">uma linguagem comum para a semana</span>
+      </div>
+      <ol class="signal-scale__levels">
+        <li style="--level-color:#22C55E"><span>0</span><small>Livre</small></li>
+        <li style="--level-color:#3B82F6"><span>1</span><small>Leve</small></li>
+        <li style="--level-color:#8B5CF6"><span>2</span><small>Equilíbrio</small></li>
+        <li style="--level-color:#F59E0B"><span>3</span><small>Cheio</small></li>
+        <li style="--level-color:#F97316"><span>4</span><small>Pesado</small></li>
+        <li style="--level-color:#EF4444"><span>5</span><small>No limite</small></li>
+      </ol>
+    </div>
   </section>
 
   <!-- Problema → Hipótese → Sistema → Construção → Evidências -->
   <section class="case-body">
-    <div class="case-section">
+    <div class="case-section case-section--lead">
       <span class="eyebrow">Problema</span>
       <h2>Quando estar “cheio” não significa ter trabalho</h2>
       <p>Ao liderar um núcleo com mais de 10 designers, eu encontrava uma situação recorrente: parte da agenda era considerada ocupada por alterações, retornos ou projetos que ainda nem tinham chegado. Não era falta de organização, mas uma forma de proteção contra a sobrecarga. O efeito coletivo, porém, era uma visão distorcida da capacidade real do time.</p>
@@ -79,11 +94,11 @@
 
     <p class="case-quote">“O SINAL. não é um sistema de controle. É uma linguagem compartilhada.”</p>
 
-    <div class="case-section">
+    <div class="case-section case-section--wide">
       <span class="eyebrow">Sistema</span>
       <h2>Uma escala de 0 a 5</h2>
       <p>O protocolo organiza a capacidade semanal em seis níveis. Quem está entre 0 e 2 pode atuar como parceiro da semana; quem está entre 3 e 5 sinaliza uma agenda comprometida ou necessidade de apoio.</p>
-      <table>
+      <table class="signal-table">
         <thead>
           <tr>
             <th>Nível</th>
@@ -92,12 +107,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>0</td><td>Livre</td><td>Pode apoiar outras pessoas</td></tr>
-          <tr><td>1</td><td>Leve</td><td>Pode apoiar outras pessoas</td></tr>
-          <tr><td>2</td><td>Equilíbrio</td><td>Pode apoiar demandas pontuais</td></tr>
-          <tr><td>3</td><td>Cheio</td><td>Agenda comprometida</td></tr>
-          <tr><td>4</td><td>Pesado</td><td>Sem espaço no momento</td></tr>
-          <tr><td>5</td><td>No limite</td><td>Precisa de apoio</td></tr>
+          <tr data-level="0"><td>0</td><td>Livre</td><td>Pode apoiar outras pessoas</td></tr>
+          <tr data-level="1"><td>1</td><td>Leve</td><td>Pode apoiar outras pessoas</td></tr>
+          <tr data-level="2"><td>2</td><td>Equilíbrio</td><td>Pode apoiar demandas pontuais</td></tr>
+          <tr data-level="3"><td>3</td><td>Cheio</td><td>Agenda comprometida</td></tr>
+          <tr data-level="4"><td>4</td><td>Pesado</td><td>Sem espaço no momento</td></tr>
+          <tr data-level="5"><td>5</td><td>No limite</td><td>Precisa de apoio</td></tr>
         </tbody>
       </table>
       <p>A rotatividade era central: estar disponível em uma semana não transformava ninguém no “designer livre” permanente. O sistema ajudava a interromper uma lógica comum em equipes criativas — recompensar as pessoas mais rápidas e responsáveis com ainda mais trabalho.</p>
@@ -125,7 +140,7 @@
       <p>A primeira versão foi testada com seis designers. Acompanhei o uso como uma sessão de pesquisa e usabilidade, observando dúvidas, interpretações da escala e pontos de fricção. Os testes levaram a ajustes concretos: apelido opcional para nomes duplicados, visualização em grid para leitura rápida, o roxo como cor do nível de equilíbrio e uma pergunta específica para a atualização de quarta-feira.</p>
     </div>
 
-    <div class="case-section">
+    <div class="case-section case-section--wide">
       <span class="eyebrow">Evidências</span>
       <h2>De horas de triangulação para uma decisão em segundos</h2>
       <p>Durante três meses, o SINAL. registrou 110 sinalizações de capacidade e apoiou decisões reais de redistribuição. Conversas que antes exigiam checagens sucessivas passaram a começar em menos de um minuto: eu olhava o dashboard, entendia o estado geral do time e conseguia agir com muito mais clareza.</p>
@@ -139,6 +154,13 @@
       <h2>O produto era o ritual</h2>
       <p>O SINAL. me ajudou a reconhecer uma característica recorrente no meu trabalho: existem situações em que um grupo vive um problema, mas ainda não possui uma linguagem para descrevê-lo. Meu papel é pesquisar esse espaço, articular o que está disperso e construir uma estrutura provisória que permita às pessoas enxergarem juntas.</p>
     </div>
+
+    <section class="signal-metrics" aria-label="Resumo das evidências do projeto">
+      <div class="signal-metric"><strong>110</strong><span>sinalizações registradas</span></div>
+      <div class="signal-metric"><strong>3 meses</strong><span>de uso contínuo</span></div>
+      <div class="signal-metric"><strong>10+</strong><span>designers no núcleo</span></div>
+      <div class="signal-metric"><strong>0–5</strong><span>linguagem compartilhada</span></div>
+    </section>
 
     <!-- FICHA TÉCNICA -->
     <div class="case-tech-sheet">
@@ -170,7 +192,7 @@
       <div class="media-gallery__stage">
         <button class="media-gallery__open" type="button" aria-label="Expandir mídia atual" data-media-open>
           <span class="media-gallery__media" data-media-stage>
-            <img src="../assets/cases/sinal/Sinal-01.png" alt="SINAL — peça 1">
+            <img src="../assets/cases/sinal/Sinal-01.png" alt="Dashboard coletivo de capacidade">
           </span>
           <span class="media-gallery__expand">Expandir ↗</span>
         </button>
@@ -183,12 +205,12 @@
       </div>
 
       <div class="media-gallery__thumbs" role="list" aria-label="Selecionar mídia">
-        <button class="media-gallery__thumb is-active" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-01.png" data-caption="SINAL — peça 1" aria-label="Ver imagem 1"><img src="../assets/cases/sinal/Sinal-01.png" alt=""></button>
-        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-02.png" data-caption="SINAL — peça 2" aria-label="Ver imagem 2"><img src="../assets/cases/sinal/Sinal-02.png" alt=""></button>
-        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-03.png" data-caption="SINAL — peça 3" aria-label="Ver imagem 3"><img src="../assets/cases/sinal/Sinal-03.png" alt=""></button>
-        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-04.png" data-caption="SINAL — peça 4" aria-label="Ver imagem 4"><img src="../assets/cases/sinal/Sinal-04.png" alt=""></button>
-        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-05.png" data-caption="SINAL — peça 5" aria-label="Ver imagem 5"><img src="../assets/cases/sinal/Sinal-05.png" alt=""></button>
-        <button class="media-gallery__thumb media-gallery__thumb-video" type="button" role="listitem" data-type="video" data-src="../assets/cases/sinal/simulação sinal.mp4" data-caption="SINAL — simulação do protocolo" aria-label="Ver vídeo"><video src="../assets/cases/sinal/simulação sinal.mp4" muted preload="metadata" playsinline></video></button>
+        <button class="media-gallery__thumb is-active" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-01.png" data-caption="Dashboard coletivo de capacidade" aria-label="Ver imagem 1"><img src="../assets/cases/sinal/Sinal-01.png" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-02.png" data-caption="Escala e estados do protocolo" aria-label="Ver imagem 2"><img src="../assets/cases/sinal/Sinal-02.png" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-03.png" data-caption="Registro semanal do SINAL." aria-label="Ver imagem 3"><img src="../assets/cases/sinal/Sinal-03.png" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-04.png" data-caption="Visualização da capacidade do time" aria-label="Ver imagem 4"><img src="../assets/cases/sinal/Sinal-04.png" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/sinal/Sinal-05.png" data-caption="Evidências e leitura operacional" aria-label="Ver imagem 5"><img src="../assets/cases/sinal/Sinal-05.png" alt=""></button>
+        <button class="media-gallery__thumb media-gallery__thumb-video" type="button" role="listitem" data-type="video" data-src="../assets/cases/sinal/simulação sinal.mp4" data-caption="Simulação do protocolo em uso" aria-label="Ver vídeo"><video src="../assets/cases/sinal/simulação sinal.mp4" muted preload="metadata" playsinline></video></button>
       </div>
     </section>
 
