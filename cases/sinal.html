@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/case.css">
+  <link rel="stylesheet" href="../css/case-themes.css">
 </head>
-<body class="case-sinal">
+<body class="case-page case-theme-sinal">
 
   <header class="site-nav">
     <a href="../index.html" class="nav-logo">AVS</a>
@@ -35,37 +36,28 @@
     </div>
   </header>
 
-  <div class="case-nav-back">
-    <a href="../projetos.html" class="link-arrow">← Todos os projetos</a>
-  </div>
-
-  <!-- A colagem é a primeira tela do case — não um mockup -->
-  <section class="case-hero">
-    <div class="case-hero-collage">
-       <img src="../assets/colagens/sinal-2.png" alt="SINAL — colagem de peças do protocolo" class="case-hero-collage-img">
+  <section class="case-header">
+    <div class="case-header__meta">
+      <div class="case-header__meta-primary">
+        <a href="../projetos.html" class="case-header__back">← Projetos</a>
+        <span class="eyebrow">Sistema de gestão · 2026</span>
+      </div>
+      <span class="case-header__index">Case 01 / DesignOps</span>
     </div>
-    <div class="case-hero-meta">
-      <h1 class="case-title">SINAL.</h1>
-      <div class="case-tags">
-        <span class="case-tag">Gestão de Design</span>
-        <span class="case-tag">Pesquisa Aplicada</span>
-        <span class="case-tag">Design de Serviço</span>
+    <div class="case-header__main">
+      <h1 class="case-header__title">SINAL.</h1>
+      <div class="case-header__side">
+        <p class="case-header__deck">Uma linguagem compartilhada para tornar a capacidade de times criativos visível e acionável.</p>
+        <div class="case-tags"><span class="case-tag">Gestão de Design</span><span class="case-tag">Pesquisa Aplicada</span><span class="case-tag">Design de Serviço</span></div>
       </div>
     </div>
-
-    <div class="signal-scale" aria-label="Escala de capacidade do SINAL, de zero a cinco">
-      <div class="signal-scale__intro">
-        <span class="signal-scale__label">Escala de capacidade</span>
-        <span class="signal-scale__note">uma linguagem comum para a semana</span>
-      </div>
-      <ol class="signal-scale__levels">
-        <li style="--level-color:#22C55E"><span>0</span><small>Livre</small></li>
-        <li style="--level-color:#3B82F6"><span>1</span><small>Leve</small></li>
-        <li style="--level-color:#8B5CF6"><span>2</span><small>Equilíbrio</small></li>
-        <li style="--level-color:#F59E0B"><span>3</span><small>Cheio</small></li>
-        <li style="--level-color:#F97316"><span>4</span><small>Pesado</small></li>
-        <li style="--level-color:#EF4444"><span>5</span><small>No limite</small></li>
-      </ol>
+    <div class="signal-spectrum" aria-label="Escala de capacidade do SINAL">
+      <div style="--signal-color:var(--sinal-0)"><strong>0</strong><span>Livre</span></div>
+      <div style="--signal-color:var(--sinal-1)"><strong>1</strong><span>Leve</span></div>
+      <div style="--signal-color:var(--sinal-2)"><strong>2</strong><span>Equilíbrio</span></div>
+      <div style="--signal-color:var(--sinal-3)"><strong>3</strong><span>Cheio</span></div>
+      <div style="--signal-color:var(--sinal-4)"><strong>4</strong><span>Pesado</span></div>
+      <div style="--signal-color:var(--sinal-5)"><strong>5</strong><span>No limite</span></div>
     </div>
   </section>
 
@@ -78,7 +70,7 @@
       <p>Cada nova demanda exigia uma triangulação: perguntar quem estava disponível, conferir agendas, avaliar a complexidade do trabalho e calcular o risco para cada cliente. A decisão ainda nem tinha sido tomada e uma parte considerável do expediente já havia sido consumida.</p>
     </div>
 
-    <p class="case-quote">“Cada demanda chegava com um custo invisível: o tempo necessário apenas para descobrir quem poderia executá-la.”</p>
+    <p class="case-quote" data-label="SINAL / NOTA">“Cada demanda chegava com um custo invisível: o tempo necessário apenas para descobrir quem poderia executá-la.”</p>
 
     <div class="case-section">
       <span class="eyebrow">Diagnóstico</span>
@@ -92,7 +84,7 @@
       <p>A hipótese foi transformar uma percepção subjetiva em um código compartilhado, simples o bastante para responder a uma única pergunta: <strong>“Como está sua semana?”</strong> Se todos usassem a mesma referência, a capacidade deixaria de existir apenas na memória da liderança e passaria a ser visível para o próprio time.</p>
     </div>
 
-    <p class="case-quote">“O SINAL. não é um sistema de controle. É uma linguagem compartilhada.”</p>
+    <p class="case-quote" data-label="SINAL / NOTA">“O SINAL. não é um sistema de controle. É uma linguagem compartilhada.”</p>
 
     <div class="case-section case-section--wide">
       <span class="eyebrow">Sistema</span>
@@ -118,7 +110,7 @@
       <p>A rotatividade era central: estar disponível em uma semana não transformava ninguém no “designer livre” permanente. O sistema ajudava a interromper uma lógica comum em equipes criativas — recompensar as pessoas mais rápidas e responsáveis com ainda mais trabalho.</p>
     </div>
 
-    <p class="case-quote">“A recompensa de quem é bom não pode ser receber sempre mais trabalho.”</p>
+    <p class="case-quote" data-label="SINAL / NOTA">“A recompensa de quem é bom não pode ser receber sempre mais trabalho.”</p>
 
     <div class="case-section">
       <span class="eyebrow">Funcionamento</span>
@@ -155,14 +147,21 @@
       <p>O SINAL. me ajudou a reconhecer uma característica recorrente no meu trabalho: existem situações em que um grupo vive um problema, mas ainda não possui uma linguagem para descrevê-lo. Meu papel é pesquisar esse espaço, articular o que está disperso e construir uma estrutura provisória que permita às pessoas enxergarem juntas.</p>
     </div>
 
-    <section class="signal-metrics" aria-label="Resumo das evidências do projeto">
+    <!-- <section class="signal-metrics" aria-label="Resumo das evidências do projeto">
       <div class="signal-metric"><strong>110</strong><span>sinalizações registradas</span></div>
       <div class="signal-metric"><strong>3 meses</strong><span>de uso contínuo</span></div>
       <div class="signal-metric"><strong>10+</strong><span>designers no núcleo</span></div>
       <div class="signal-metric"><strong>0–5</strong><span>linguagem compartilhada</span></div>
-    </section>
+    </section> -->
 
     <!-- FICHA TÉCNICA -->
+    <section class="case-metrics signal-evidence" style="--rail-columns:4" aria-label="Evidências do SINAL">
+      <div class="case-metric"><strong>110</strong><span>sinalizações registradas</span></div>
+      <div class="case-metric"><strong>3 meses</strong><span>de uso contínuo</span></div>
+      <div class="case-metric"><strong>10+</strong><span>designers no núcleo</span></div>
+      <div class="case-metric"><strong>0–5</strong><span>linguagem compartilhada</span></div>
+    </section>
+
     <div class="case-tech-sheet">
       <div class="tech-field">
         <span class="tech-label">Cliente</span>

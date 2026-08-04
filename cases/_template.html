@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/case.css">
+  <link rel="stylesheet" href="../css/case-themes.css">
 </head>
-<body>
+<body class="case-page case-theme-default">
 
   <header class="site-nav">
     <a href="../index.html" class="nav-logo">AVS</a>
@@ -26,27 +27,27 @@
     </div>
   </header>
 
-  <div class="case-nav-back">
-    <a href="../projetos.html" class="link-arrow">← Todos os projetos</a>
-  </div>
-
-  <!-- A colagem é a primeira tela do case — não um mockup -->
-  <section class="case-hero">
-    <div class="case-hero-collage">
-      <!-- TROQUE: <img src="../assets/colagens/[projeto]-capa.jpg" alt=""> -->
+  <section class="case-header case-header--compact">
+    <div class="case-header__meta">
+      <div class="case-header__meta-primary">
+        <a href="../projetos.html" class="case-header__back">← Projetos</a>
+        <span class="eyebrow">[Categoria · Ano]</span>
+      </div>
+      <span class="case-header__index">Case XX / [Tipo]</span>
     </div>
-    <div class="case-hero-meta">
-      <h1 class="case-title">[Nome do Projeto]</h1>
-      <div class="case-tags">
-        <span class="case-tag">Estratégia de Marca</span>
-        <span class="case-tag">Direção Criativa</span>
+    <div class="case-header__main">
+      <h1 class="case-header__title">[Nome do Projeto]</h1>
+      <div class="case-header__side">
+        <p class="case-header__deck">[Uma frase curta que explique a transformação central do projeto.]</p>
+        <div class="case-tags"><span class="case-tag">Estratégia</span><span class="case-tag">Direção Criativa</span></div>
       </div>
     </div>
+    <div class="case-header__rail" style="--rail-columns:4"><span>contexto</span><span>hipótese</span><span>sistema</span><span>resultado</span></div>
   </section>
 
   <!-- Problema → Pesquisa → Processo → Resultado -->
   <section class="case-body">
-    <div class="case-section">
+    <div class="case-section case-section--lead">
       <span class="eyebrow">Problema</span>
       <h2>O contexto que motivou o projeto</h2>
       <p>[Descreva o problema real — o mercado, o cliente, a tensão que existia antes do projeto começar.]</p>

@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/case.css">
+  <link rel="stylesheet" href="../css/case-themes.css">
 </head>
-<body>
+<body class="case-page case-theme-default">
 
   <header class="site-nav">
     <a href="../index.html" class="nav-logo">AVS</a>
@@ -35,27 +36,27 @@
     </div>
   </header>
 
-  <div class="case-nav-back">
-    <a href="../projetos.html" class="link-arrow">← Todos os projetos</a>
-  </div>
-
-  <!-- A colagem é a primeira tela do case — não um mockup -->
-  <section class="case-hero">
-    <div class="case-hero-collage">
-      <!-- TROQUE: <img src="../assets/colagens/[projeto]-capa.jpg" alt=""> -->
+  <section class="case-header case-header--compact">
+    <div class="case-header__meta">
+      <div class="case-header__meta-primary">
+        <a href="../projetos.html" class="case-header__back">← Projetos</a>
+        <span class="eyebrow">Estratégia de marca · 2026</span>
+      </div>
+      <span class="case-header__index">Case 06 / Em desenvolvimento</span>
     </div>
-    <div class="case-hero-meta">
-      <h1 class="case-title">CorpX × MT Pagamentos</h1>
-      <div class="case-tags">
-        <span class="case-tag">Diagnóstico Estratégico</span>
-        <span class="case-tag">Alinhamento Executivo</span>
+    <div class="case-header__main">
+      <h1 class="case-header__title">CorpX × MT Pagamentos</h1>
+      <div class="case-header__side">
+        <p class="case-header__deck">Diagnóstico, arquitetura narrativa e alinhamento executivo para um novo ciclo de negócio.</p>
+        <div class="case-tags"><span class="case-tag">Diagnóstico Estratégico</span><span class="case-tag">Alinhamento Executivo</span><span class="case-tag">Direção Criativa</span></div>
       </div>
     </div>
+    <div class="case-header__rail" style="--rail-columns:4"><span>diagnóstico</span><span>workshops</span><span>narrativa</span><span>identidade</span></div>
   </section>
 
   <!-- Problema → Pesquisa → Processo → Resultado -->
   <section class="case-body">
-    <div class="case-section">
+    <div class="case-section case-section--lead">
       <span class="eyebrow">Problema</span>
       <h2>[descreva o contexto de negócio que motivou o projeto]</h2>
       <p>[Complete com o cenário antes do projeto — o que não funcionava na marca ou no posicionamento.]</p>

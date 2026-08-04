@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tipo Sensível — Andrê Vinicius</title>
 
-  <meta name="description" content="Pesquisa em design computacional e comportamento tipográfico generativo, estruturada em uma taxonomia própria." />
+  <meta name="description" content="Pesquisa autoral em design computacional que investiga a tipografia como corpo, campo e comportamento por meio de sistemas generativos em p5.js." />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Tipo Sensível — Andrê Vinicius" />
-  <meta property="og:description" content="Pesquisa em design computacional e comportamento tipográfico generativo, estruturada em uma taxonomia própria." />
+  <meta property="og:description" content="Uma pesquisa em tipografia interativa, comportamento e sistemas generativos organizada em Partícula, Campo e Forma." />
   <meta property="og:image" content="https://portfolio-andre-design.vercel.app/assets/og/cover.jpg" />
   <meta property="og:url" content="https://portfolio-andre-design.vercel.app/cases/tipo-sensivel.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -17,9 +17,10 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/case.css">
+  <link rel="stylesheet" href="../css/case-themes.css">
 </head>
-<body>
 
+<body class="case-page case-theme-tipo">
   <header class="site-nav">
     <a href="../index.html" class="nav-logo">AVS</a>
     <ul class="nav-links">
@@ -35,82 +36,185 @@
     </div>
   </header>
 
-  <div class="case-nav-back">
-    <a href="../projetos.html" class="link-arrow">← Todos os projetos</a>
-  </div>
-
-  <!-- A colagem é a primeira tela do case — não um mockup -->
-  <section class="case-hero">
-    <div class="case-hero-collage">
-      <img src="../assets/colagens/tipo-sensivel-2.png" alt="Tipo Sensível">
+  <section class="case-header case-header--compact">
+    <div class="case-header__meta">
+      <div class="case-header__meta-primary">
+        <a href="../projetos.html" class="case-header__back">← Projetos</a>
+        <span class="eyebrow">Pesquisa autoral · 2026</span>
+      </div>
+      <span class="case-header__index">Case 02 / Computação visual</span>
     </div>
-    <div class="case-hero-meta">
-      <h1 class="case-title">Tipo Sensível</h1>
-      <div class="case-tags">
-        <span class="case-tag">Design Computacional</span>
-        <span class="case-tag">p5.js</span>
+    <div class="case-header__main">
+      <h1 class="case-header__title">Tipo Sensível</h1>
+      <div class="case-header__side">
+        <p class="case-header__deck">Tipografia como corpo, campo e comportamento em sistemas generativos.</p>
+        <div class="case-tags"><span class="case-tag">Design Computacional</span><span class="case-tag">Pesquisa Autoral</span><span class="case-tag">Tipografia Interativa</span></div>
       </div>
     </div>
+    <div class="case-header__rail" style="--rail-columns:4"><span>11 · estudos</span><span>3 · níveis</span><span>p5.js · Canvas 2D</span><span>vivo · pesquisa</span></div>
   </section>
 
-  <!-- Problema → Pesquisa → Processo → Resultado -->
-  <section class="case-body">
-    <div class="case-section">
-      <span class="eyebrow">Origem</span>
-      <h2>Tipo como duplo sentido</h2>
-      <p>Projeto de pesquisa autoral em design computacional, renomeado de "type-comportments" através de uma sessão formal de crítica de design. O nome "Tipo Sensível" foi escolhido pelo duplo sentido — tipografia e "tipo de coisa".</p>
-    </div>
+  <main class="case-body">
+    <section class="case-section case-section--lead">
+      <span class="eyebrow">Questão de pesquisa</span>
+      <h2>O que uma letra faz quando deixa de ser forma estática e passa a ser corpo?</h2>
+      <p>O Tipo Sensível nasceu de uma mudança de material. Depois de experimentar com partículas, campos de fluxo e ruído em p5.js, passei a aplicar a mesma lógica de sistemas reativos à tipografia. Em vez de usar a letra apenas para comunicar uma mensagem, comecei a observá-la como fenômeno computacional: uma forma capaz de reagir, tensionar, oscilar, dissolver-se e se recompor.</p>
+    </section>
 
-    <div class="case-section">
-      <span class="eyebrow">Investigação</span>
-      <h2>Comportamento tipográfico generativo</h2>
-      <p>Construído com p5.js, o projeto explora sistemas generativos aplicados à tipografia — investigando como forma, movimento e regra computacional podem gerar comportamento tipográfico inesperado.</p>
-    </div>
+    <p class="case-quote" data-label="HIPÓTESE / 01">“A palavra deixa de representar um conceito e passa a demonstrá-lo com o próprio comportamento.”</p>
 
-    <div class="case-section">
-      <span class="eyebrow">Estrutura</span>
-      <h2>Uma taxonomia emergente</h2>
-      <p>Ao longo dos experimentos, emergiu uma taxonomia própria em três níveis — Partícula, Campo, Forma — cada um representando uma escala diferente de comportamento tipográfico.</p>
-    </div>
+    <section class="case-section">
+      <span class="eyebrow">Hipótese</span>
+      <h2>Comportamento também pode ser linguagem tipográfica</h2>
+      <p>A hipótese foi tratar movimento, força, atraso, atrito e resposta como qualidades formais da letra. Cada experimento parte de uma regra simples e observa o que emerge quando a tipografia encontra um sistema sensível ao cursor, à câmera, ao tempo ou ao ruído.</p>
+    </section>
 
-    <div class="case-section">
-      <span class="eyebrow">Resultado</span>
-      <h2>Um território de experimentação contínuo</h2>
-      <p>Publicado como série viva, com referências conceituais tratadas como "companhias de percurso" — o projeto segue em expansão, um território de experimentação formal, não uma entrega fechada.</p>
-      <a href="https://tipo-sensivel.vercel.app" target="_blank" rel="noopener noreferrer" class="link-cta"> Conheça o Tipo Sensível.</a>
-    </div>
+    <section class="case-section">
+      <span class="eyebrow">Método</span>
+      <h2>Escrever sistemas, observar e editar</h2>
+      <p>Os estudos foram desenvolvidos por ciclos curtos: formular uma pergunta, programar um comportamento, testar a interação e registrar o que o sistema revelava. A estrutura final não foi definida antes da exploração; ela apareceu quando os experimentos começaram a formar famílias.</p>
+    </section>
 
-    <!-- FICHA TÉCNICA -->
+    <section class="case-model" aria-labelledby="taxonomia-title">
+      <div class="case-model__intro">
+        <span class="eyebrow">Taxonomia emergente</span>
+        <h2 id="taxonomia-title">Partícula, Campo e Forma</h2>
+        <p>Três escalas para compreender como a tipografia pode se comportar dentro de um sistema computacional.</p>
+      </div>
+
+      <div class="case-model__grid">
+        <article class="case-model__item">
+          <span class="case-model__number">I</span>
+          <h3>Partícula</h3>
+          <p>O que uma palavra faz quando seus pontos ganham força, atrito, repulsão e memória?</p>
+          <small>Latência · Tensão · Traço</small>
+        </article>
+
+        <article class="case-model__item">
+          <span class="case-model__number">II</span>
+          <h3>Campo</h3>
+          <p>Como uma palavra ocupa e responde a um ambiente de ruído, proximidade ou interferência?</p>
+          <small>Eco · Névoa · Constelação · Erosão</small>
+        </article>
+
+        <article class="case-model__item">
+          <span class="case-model__number">III</span>
+          <h3>Forma</h3>
+          <p>O que uma letra se torna quando é observada como objeto óptico, matriz ou espécime?</p>
+          <small>Lente · Retícula · Forma · Specimen</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section case-section--wide">
+      <span class="eyebrow">Experimento fundador</span>
+      <h2>Latência: a palavra demonstrando o próprio conceito</h2>
+      <div class="case-section__content">
+        <p>Em Latência, a palavra é convertida em centenas de pontos por meio de <code>textToPoints()</code>. Quando o cursor se aproxima, cada ponto se afasta; quando o estímulo desaparece, a forma retorna lentamente, oscila e só então encontra repouso.</p>
+        <p>O experimento funcionou quando a animação deixou de ser um efeito aplicado à palavra. O atraso entre estímulo e recomposição tornou-se o significado da própria composição.</p>
+      </div>
+    </section>
+
+    <section class="case-parameters" aria-label="Parâmetros do sistema">
+      <div>
+        <span>particleCount</span>
+        <strong>≈ 800</strong>
+      </div>
+      <div>
+        <span>repulsionRadius</span>
+        <strong>120 px</strong>
+      </div>
+      <div>
+        <span>friction</span>
+        <strong>0.82</strong>
+      </div>
+      <div>
+        <span>returnForce</span>
+        <strong>0.04</strong>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <span class="eyebrow">Decisão de sistema</span>
+      <h2>Os parâmetros funcionam como etiquetas das obras</h2>
+      <p>Os valores não ficam escondidos porque o projeto não pretende apresentar efeitos mágicos. Tornar os parâmetros visíveis ajuda a compreender que cada comportamento nasce de uma decisão — e que o sistema pode ser reproduzido, tensionado ou alterado.</p>
+    </section>
+
+    <section class="case-section">
+      <span class="eyebrow">Direção visual</span>
+      <h2>Um fenômeno em estado de catalogação</h2>
+      <p>Fundo claro, tinta escura, parâmetros documentados e quase nenhum ornamento. A interface foi concebida como algo entre arquivo, mesa de pesquisa, catálogo e observatório: um lugar para abrir, testar, observar e retornar.</p>
+    </section>
+
+    <section class="research-inventory" aria-labelledby="inventory-title">
+      <div class="research-inventory__head">
+        <span class="eyebrow">Arquivo de estudos</span>
+        <h2 id="inventory-title">Inventário dos experimentos</h2>
+      </div>
+
+      <ol class="research-inventory__list">
+        <li><span>01</span><strong>Latência</strong><small>retorno elástico e atraso</small></li>
+        <li><span>02</span><strong>Tensão</strong><small>mola, oscilação e recomposição</small></li>
+        <li><span>03</span><strong>Traço</strong><small>percurso pelos contornos dos glifos</small></li>
+        <li><span>04</span><strong>Eco</strong><small>memória e repetição direcional</small></li>
+        <li><span>05</span><strong>Névoa</strong><small>leitura como gesto e revelação</small></li>
+        <li><span>06</span><strong>Constelação</strong><small>palavras como nós de uma rede</small></li>
+        <li><span>07</span><strong>Erosão</strong><small>texto como matéria degradável</small></li>
+        <li><span>08</span><strong>Lente</strong><small>o olhar como distorção</small></li>
+        <li><span>09</span><strong>Retícula</strong><small>letra como matriz e grão</small></li>
+        <li><span>10</span><strong>Forma</strong><small>variação, escala e presença</small></li>
+        <li><span>11</span><strong>Specimen</strong><small>tipografia como sistema variável</small></li>
+      </ol>
+    </section>
+
+    <section class="case-section case-section--wide">
+      <span class="eyebrow">Descoberta</span>
+      <h2>O sistema apareceu depois da exploração</h2>
+      <div class="case-section__content">
+        <p>O Tipo Sensível parece rigoroso porque foi editado. A exploração foi mais caótica: cada estudo abria uma pergunta que o próximo tentava responder. Quando os experimentos foram observados em conjunto, surgiu a estrutura Partícula, Campo e Forma.</p>
+        <p>Mais do que uma coleção de efeitos, o projeto consolidou uma forma de trabalho: escrever sistemas, observar o que emerge e transformar comportamento em linguagem visual.</p>
+        <a href="https://tipo-sensivel.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-cta">Conheça o Tipo Sensível.</a>
+      </div>
+    </section>
+
+    
+
+    <section class="case-metrics" aria-label="Resumo do projeto">
+      <div class="case-metric"><strong>11</strong><span>experimentos</span></div>
+      <div class="case-metric"><strong>3</strong><span>níveis de comportamento</span></div>
+      <div class="case-metric"><strong>p5.js</strong><span>principal material técnico</span></div>
+      <div class="case-metric"><strong>vivo</strong><span>status da pesquisa</span></div>
+    </section>
+
     <div class="case-tech-sheet">
-      <div class="tech-field">gi
-        <span class="tech-label">Cliente</span>
-        <span class="tech-value">Projeto autoral</span>
+      <div class="tech-field">
+        <span class="tech-label">Natureza</span>
+        <span class="tech-value">Pesquisa autoral independente</span>
       </div>
       <div class="tech-field">
-        <span class="tech-label">Ano</span>
-        <span class="tech-value">2026</span>
+        <span class="tech-label">Escopo</span>
+        <span class="tech-value">Pesquisa, conceito, direção visual, interação e desenvolvimento</span>
       </div>
       <div class="tech-field">
-        <span class="tech-label">Minha função</span>
-        <span class="tech-value">Pesquisa, código e direção conceitual</span>
+        <span class="tech-label">Publicação</span>
+        <span class="tech-value">Série experimental acompanhada por ensaio no Substack</span>
       </div>
       <div class="tech-field">
-        <span class="tech-label">Stack</span>
-        <span class="tech-value">p5.js, Vite</span>
+        <span class="tech-label">Estado da pesquisa</span>
+        <span class="tech-value">Arquivo vivo, aberto a novos estudos e iterações</span>
       </div>
     </div>
 
-    <!-- GALERIA MULTIMÍDIA — imagens e vídeo no mesmo fluxo -->
-    <section class="media-gallery" aria-labelledby="gallery-title">
+    <section class="media-gallery tipo-gallery" aria-labelledby="gallery-title">
       <div class="media-gallery__head">
-        <h2 class="eyebrow" id="gallery-title" style="margin:0;">Galeria</h2>
-        <p class="media-gallery__counter" aria-live="polite"><span data-media-current>01</span> / <span data-media-total>05</span></p>
+        <h2 class="eyebrow" id="gallery-title" style="margin:0;">Catálogo de experimentos</h2>
+        <p class="media-gallery__counter" aria-live="polite"><span data-media-current>01</span> / <span data-media-total>08</span></p>
       </div>
 
       <div class="media-gallery__stage">
         <button class="media-gallery__open" type="button" aria-label="Expandir mídia atual" data-media-open>
           <span class="media-gallery__media" data-media-stage>
-            <img src="../assets/cases/tipo/eco.png" alt="Tipo Sensível — peça 1">
+            <img src="../assets/cases/tipo/latencia.png" alt="Latência">
           </span>
           <span class="media-gallery__expand">Expandir ↗</span>
         </button>
@@ -118,17 +222,19 @@
 
       <div class="media-gallery__controls" aria-label="Controles da galeria">
         <button class="media-gallery__arrow" type="button" data-media-prev aria-label="Mídia anterior">←</button>
-        <p class="media-gallery__caption" data-media-caption>Tipo Sensível — peça 1</p>
+        <p class="media-gallery__caption" data-media-caption>01 — Latência / Partícula</p>
         <button class="media-gallery__arrow" type="button" data-media-next aria-label="Próxima mídia">→</button>
       </div>
 
-      <div class="media-gallery__thumbs" role="list" aria-label="Selecionar mídia">
-        <button class="media-gallery__thumb is-active" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/eco.png" data-caption="Tipo Sensível — peça 1" aria-label="Ver imagem 1"><img src="../assets/cases/tipo/eco.png" alt=""></button>
-        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/latencia.png" data-caption="Tipo Sensível — peça 2" aria-label="Ver imagem 2"><img src="../assets/cases/tipo/latencia.png" alt=""></button>
-        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/Forma.png" data-caption="Tipo Sensível — peça 3" aria-label="Ver imagem 3"><img src="../assets/cases/tipo/Forma.png" alt=""></button>
-        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/traco.png" data-caption="Tipo Sensível — peça 4" aria-label="Ver imagem 4"><img src="../assets/cases/tipo/traco.png" alt=""></button>
-        <button class="media-gallery__thumb media-gallery__thumb-video" type="button" role="listitem" data-type="video" data-src="../assets/cases/tipo/lente.mp4" data-caption="Tipo Sensível — vídeo" aria-label="Ver vídeo"><video src="../assets/cases/tipo/lente.mp4" muted preload="metadata" playsinline></video></button>
-        <button class="media-gallery__thumb media-gallery__thumb-video" type="button" role="listitem" data-type="video" data-src="../assets/cases/tipo/nevoa.mp4" data-caption="Tipo Sensível — vídeo" aria-label="Ver vídeo"><video src="../assets/cases/tipo/nevoa.mp4" muted preload="metadata" playsinline></video></button>
+      <div class="media-gallery__thumbs" role="list" aria-label="Selecionar experimento">
+        <button class="media-gallery__thumb is-active" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/latencia.png" data-caption="01 — Latência / Partícula" aria-label="Ver Latência"><img src="../assets/cases/tipo/latencia.png" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/tensao.png" data-caption="02 — Tensão / Partícula" aria-label="Ver Tensão"><img src="../assets/cases/tipo/tensao.png" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/traco.png" data-caption="03 — Traço / Partícula" aria-label="Ver Traço"><img src="../assets/cases/tipo/traco.png" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/eco.png" data-caption="04 — Eco / Campo" aria-label="Ver Eco"><img src="../assets/cases/tipo/eco.png" alt=""></button>
+        <button class="media-gallery__thumb media-gallery__thumb-video" type="button" role="listitem" data-type="video" data-src="../assets/cases/tipo/nevoa.mp4" data-caption="05 — Névoa / Campo" aria-label="Ver Névoa"><video src="../assets/cases/tipo/nevoa.mp4" muted preload="metadata" playsinline></video></button>
+        <button class="media-gallery__thumb media-gallery__thumb-video" type="button" role="listitem" data-type="video" data-src="../assets/cases/tipo/lente.mp4" data-caption="08 — Lente / Forma" aria-label="Ver Lente"><video src="../assets/cases/tipo/lente.mp4" muted preload="metadata" playsinline></video></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/Forma.png" data-caption="10 — Forma / Forma" aria-label="Ver Forma"><img src="../assets/cases/tipo/Forma.png" alt=""></button>
+        <button class="media-gallery__thumb" type="button" role="listitem" data-type="image" data-src="../assets/cases/tipo/spiece.png" data-caption="11 — Specimen / Forma" aria-label="Ver Specimen"><img src="../assets/cases/tipo/spiece.png" alt=""></button>
       </div>
     </section>
 
@@ -139,7 +245,9 @@
       <p class="media-lightbox__caption" data-media-lightbox-caption></p>
       <button class="media-lightbox__arrow media-lightbox__next" type="button" data-media-lightbox-next aria-label="Próxima mídia">→</button>
     </dialog>
-  </section>
+
+    
+  </main>
 
   <footer class="site-footer">
     <span>© 2026 Andrê Vinicius de Souza Silva</span>
@@ -153,8 +261,8 @@
 
   <script src="../js/main.js"></script>
   <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

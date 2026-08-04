@@ -1,0 +1,263 @@
+/* ============================================
+   CASE THEMES — variações controladas
+   ============================================ */
+
+.case-theme-default {
+  --case-accent: #1D3E8C;
+  --case-accent-soft: rgba(29,62,140,.10);
+}
+
+.case-theme-sinal {
+  --case-accent: #8B5CF6;
+  --case-accent-soft: rgba(139,92,246,.10);
+  --sinal-0:#22C55E; --sinal-1:#3B82F6; --sinal-2:#8B5CF6;
+  --sinal-3:#F59E0B; --sinal-4:#F97316; --sinal-5:#EF4444;
+}
+
+.case-theme-tipo {
+  --case-accent: #1D3E8C;
+  --case-accent-soft: rgba(29,62,140,.08);
+}
+
+.case-theme-cnp {
+  --case-accent: #213F99;
+  --case-accent-soft: rgba(33,63,153,.08);
+  --cnp-insights:#213F99;
+  --cnp-business:#55B8D2;
+  --cnp-institutional:#58A987;
+  --cnp-social:#D28B67;
+}
+
+.item-sinal-0 { --item-accent:var(--sinal-0); }
+.item-sinal-1 { --item-accent:var(--sinal-1); }
+.item-sinal-2 { --item-accent:var(--sinal-2); }
+.item-sinal-3 { --item-accent:var(--sinal-3); }
+.item-sinal-4 { --item-accent:var(--sinal-4); }
+.item-sinal-5 { --item-accent:var(--sinal-5); }
+
+.item-cnp-insights { --item-accent:var(--cnp-insights); }
+.item-cnp-business { --item-accent:var(--cnp-business); }
+.item-cnp-institutional { --item-accent:var(--cnp-institutional); }
+.item-cnp-social { --item-accent:var(--cnp-social); }
+
+/* Componentes específicos que continuam sem criar CSS por página */
+.signal-levels {
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:.45rem;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.signal-levels li {
+  padding-top:.6rem;
+  border-top:3px solid var(--level-color);
+}
+.signal-levels span {
+  display:block;
+  font-family:var(--font-display);
+}
+.signal-levels small {
+  color:var(--ink-faint);
+  font-size:.65rem;
+}
+
+.signal-table {
+  width:100%;
+  border-collapse:collapse;
+}
+.signal-table th,
+.signal-table td {
+  padding:.75rem .5rem;
+  border-bottom:1px solid var(--rule);
+  text-align:left;
+}
+.signal-table th {
+  color:var(--ink-faint);
+  font-size:var(--size-micro);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.signal-table td:first-child {
+  font-family:var(--font-display);
+  font-size:1.05rem;
+}
+
+.research-inventory {
+  grid-column:1 / -1;
+  padding:clamp(2rem,5vw,4rem) 0;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.research-inventory__head {
+  display:grid;
+  grid-template-columns:1fr 3fr;
+  gap:var(--gutter);
+  margin-bottom:2rem;
+}
+.research-inventory__list {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.research-inventory__list li {
+  display:grid;
+  grid-template-columns:3.5rem minmax(10rem,1fr) minmax(12rem,2fr);
+  gap:1rem;
+  padding:.8rem 0;
+  border-top:1px solid var(--rule);
+}
+.research-inventory__list span { color:var(--case-accent); }
+.research-inventory__list strong {
+  font-family:var(--font-display);
+  font-weight:400;
+}
+.research-inventory__list small { color:var(--ink-faint); }
+
+@media (max-width:600px) {
+  .signal-levels { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .research-inventory__head { grid-template-columns:1fr; }
+  .research-inventory__list li { grid-template-columns:2.5rem 1fr; }
+  .research-inventory__list small { grid-column:2; }
+}
+
+
+/* ============================================
+   SINAL V2 — impacto cromático e ritmo próprio
+   ============================================ */
+
+.case-theme-sinal {
+  position: relative;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(139,92,246,.12), transparent 24rem),
+    radial-gradient(circle at 88% 38%, rgba(59,130,246,.07), transparent 26rem),
+    var(--paper);
+}
+
+.case-theme-sinal::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .028;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+}
+
+.case-theme-sinal .case-header {
+  background:
+    linear-gradient(135deg, rgba(139,92,246,.08), transparent 48%),
+    rgba(245,243,238,.72);
+}
+
+.case-theme-sinal .case-header__title {
+  position: relative;
+  color: var(--ink);
+}
+
+.case-theme-sinal .case-header__title::after {
+  content: "";
+  display: block;
+  width: clamp(4rem, 12vw, 10rem);
+  height: .42rem;
+  margin-top: 1.2rem;
+  background: linear-gradient(
+    90deg,
+    var(--sinal-0) 0 16.6%,
+    var(--sinal-1) 16.6% 33.2%,
+    var(--sinal-2) 33.2% 49.8%,
+    var(--sinal-3) 49.8% 66.4%,
+    var(--sinal-4) 66.4% 83%,
+    var(--sinal-5) 83% 100%
+  );
+}
+
+.signal-spectrum {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 0 var(--gutter);
+  border-top: 1px solid var(--rule);
+}
+
+.signal-spectrum > div {
+  min-width: 0;
+  padding: 1rem .75rem 1.1rem;
+  border-top: 4px solid var(--signal-color);
+}
+
+.signal-spectrum > div + div {
+  border-left: 1px solid var(--rule);
+}
+
+.signal-spectrum strong {
+  display: block;
+  margin-bottom: .3rem;
+  color: var(--signal-color);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.signal-spectrum span {
+  color: var(--ink-faint);
+  font-size: var(--size-micro);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.case-theme-sinal .case-section--lead {
+  position: relative;
+  padding-left: clamp(1rem, 3vw, 2rem);
+  border-left: 4px solid var(--case-accent);
+}
+
+.case-theme-sinal .case-section--lead::before {
+  content: "CAPACIDADE DEIXA DE SER INVISÍVEL";
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--case-accent);
+  font-size: .62rem;
+  letter-spacing: .13em;
+}
+
+.case-theme-sinal .case-quote {
+  max-width: 38ch;
+  margin-left: auto;
+  margin-right: auto;
+  border-left-width: 4px;
+  background: rgba(139,92,246,.045);
+  padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+}
+
+.case-theme-sinal .signal-table tr[data-level="0"] td:first-child { color:var(--sinal-0); }
+.case-theme-sinal .signal-table tr[data-level="1"] td:first-child { color:var(--sinal-1); }
+.case-theme-sinal .signal-table tr[data-level="2"] td:first-child { color:var(--sinal-2); }
+.case-theme-sinal .signal-table tr[data-level="3"] td:first-child { color:var(--sinal-3); }
+.case-theme-sinal .signal-table tr[data-level="4"] td:first-child { color:var(--sinal-4); }
+.case-theme-sinal .signal-table tr[data-level="5"] td:first-child { color:var(--sinal-5); }
+
+.case-theme-sinal .signal-table td:first-child {
+  font-size: 1.35rem;
+}
+
+.signal-evidence {
+  background: rgba(139,92,246,.035);
+}
+
+.signal-evidence .case-metric strong {
+  color: var(--case-accent);
+}
+
+@media (max-width: 700px) {
+  .signal-spectrum {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .signal-spectrum > div:nth-child(4) {
+    border-left: 0;
+  }
+}
